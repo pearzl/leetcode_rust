@@ -9,7 +9,6 @@ impl Solution {
         } else if strs.len() == 1 {
             return strs[0].to_string();
         }
-        let mut ret = String::new();
         let goal = &strs[0];
         let mut i = 0;
         loop {

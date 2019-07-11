@@ -14,7 +14,7 @@ impl Solution {
         let f2 = divisor < 0;
         let neg = f1 != f2;
         let mut dividend = if f1 { dividend } else { 0 - dividend };
-        let mut divisor = if f2 { divisor } else { 0 - divisor };
+        let divisor = if f2 { divisor } else { 0 - divisor };
         let mut bn = 0;
         let mut d = divisor;
         let mut r = 0;
@@ -24,12 +24,12 @@ impl Solution {
         }
         while dividend <= divisor {
             if dividend == divisor {
-                r += (1 << bn);
+                r += 1 << bn;
                 break;
             }
             // println!("{},{},{}", dividend, d, bn);
             dividend -= d;
-            r += (1 << bn);
+            r += 1 << bn;
             if dividend == 0 {
                 break;
             }

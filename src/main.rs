@@ -34,14 +34,22 @@ fn main() {
     let title = format!("q{:04}_{}", num, title.trim());
 
     fs::write(
-        format!("src/{}.rs", title),
+        format!("src/answer/{}.rs", title),
         format!("// {} \n{}", title, TEMPLATE).as_bytes(),
     )
     .unwrap();
 
     let lib_file = "src/lib.rs";
-    let append_content = format!("mod {}; \n", title);
+    let append_content = format!("    mod {}; \n", title);
     let mut content = fs::read(lib_file).unwrap();
+    while let Some(c) = content.pop(){
+        if c == b'}' {
+            break;
+        }
+    }
     content.append(&mut append_content.into_bytes());
+    content.push(b'\n');
+    content.push(b'}');
+    content.push(b'\n');
     fs::write(lib_file, content).unwrap();
 }

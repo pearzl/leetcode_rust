@@ -8,7 +8,7 @@ impl Solution {
             return s;
         }
         let mut bufv = vec![];
-        for i in 0..num_rows {
+        for _ in 0..num_rows {
             bufv.push(vec![]);
         }
         let mut l = 0;

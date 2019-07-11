@@ -1,33 +1,37 @@
 
 mod util;
 
-mod q0001_two_sum;
-mod q0002_add_two_numbers;
-mod q0003_longest_substring_without_repeating_characters;
-mod q0004_median_of_two_sorted_arrays;
-mod q0005_longest_palindromic_substring;
-mod q0006_zigzag_conversion;
-mod q0007_reverse_integer;
-mod q0008_string_to_integer_atoi;
-mod q0009_palindrome_number;
-mod q0010_regular_expression_matching;
-mod q0011_container_with_most_water;
-mod q0012_integer_to_roman;
-mod q0013_roman_to_integer;
-mod q0014_longest_common_prefix;
-mod q0015_3sum;
-mod q0016_3sum_closest;
-mod q0017_letter_combinations_of_a_phone_number;
-mod q0018_4sum;
-mod q0019_remove_nth_node_from_end_of_list;
-mod q0020_valid_parentheses;
-mod q0021_merge_two_sorted_lists;
-mod q0022_generate_parentheses;
-mod q0023_merge_k_sorted_lists;
-mod q0024_swap_nodes_in_pairs;
-mod q0025_reverse_nodes_in_k_group;
-mod q0026_remove_duplicates_from_sorted_array;
-mod q0027_remove_element;
-mod q0028_implement_strstr;
-mod q0029_divide_two_integers;
-mod q0030_substring_with_concatenation_of_all_words;
+#[allow(dead_code)]
+mod answer {
+    mod q0001_two_sum;
+    mod q0002_add_two_numbers;
+    mod q0003_longest_substring_without_repeating_characters;
+    mod q0004_median_of_two_sorted_arrays;
+    mod q0005_longest_palindromic_substring;
+    mod q0006_zigzag_conversion;
+    mod q0007_reverse_integer;
+    mod q0008_string_to_integer_atoi;
+    mod q0009_palindrome_number;
+    mod q0010_regular_expression_matching;
+    mod q0011_container_with_most_water;
+    mod q0012_integer_to_roman;
+    mod q0013_roman_to_integer;
+    mod q0014_longest_common_prefix;
+    mod q0015_3sum;
+    mod q0016_3sum_closest;
+    mod q0017_letter_combinations_of_a_phone_number;
+    mod q0018_4sum;
+    mod q0019_remove_nth_node_from_end_of_list;
+    mod q0020_valid_parentheses;
+    mod q0021_merge_two_sorted_lists;
+    mod q0022_generate_parentheses;
+    mod q0023_merge_k_sorted_lists;
+    mod q0024_swap_nodes_in_pairs;
+    mod q0025_reverse_nodes_in_k_group;
+    mod q0026_remove_duplicates_from_sorted_array;
+    mod q0027_remove_element;
+    mod q0028_implement_strstr;
+    mod q0029_divide_two_integers;
+    mod q0030_substring_with_concatenation_of_all_words;
+    mod q0031_next_permutation; 
+}

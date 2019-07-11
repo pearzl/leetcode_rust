@@ -4,8 +4,6 @@ struct Solution;
 
 impl Solution {
     pub fn generate_parenthesis(n: i32) -> Vec<String> {
-        let mut i = n;
-        let mut o = 0;
         let mut ret = vec![];
         let mut st = vec![(n, 0, String::new())];
         while st[0].0 > 0 || st[0].1 > 0 {
