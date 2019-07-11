@@ -34,4 +34,6 @@ mod answer {
     mod q0029_divide_two_integers;
     mod q0030_substring_with_concatenation_of_all_words;
     mod q0031_next_permutation; 
+    mod q0032_longest_valid_parentheses; 
+
 }
