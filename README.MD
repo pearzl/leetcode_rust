@@ -17,6 +17,8 @@ leetcode 题目的 Rust 解法
 - 生成模板: `cargo run <title> <num>`
 - 运行某道题目： `cargo test --lib <name>`, 如`cargo test --lib 22`,`cargo test --lib two_sum`
 
+
+<pre>
 !~!!~!!~!!~!!~!!~!
 !~!!~!!~!!~!!~!!~!
 !~!!~!!~!!~!!~!!~!
@@ -30,3 +32,4 @@ leetcode 题目的 Rust 解法
 !~!
 !~!
 !~!
+</pre>
