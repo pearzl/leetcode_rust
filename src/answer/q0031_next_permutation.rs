@@ -11,7 +11,7 @@ impl Solution {
         }
         let mut i = len - 2;
         let mut j = len - 1;
-        while i >= 0 {
+        loop{
             if nums[i] < nums[j] {
                 nums.swap(i, j);
                 break;
