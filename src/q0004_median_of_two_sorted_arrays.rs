@@ -1,5 +1,8 @@
-// 4
-fn main() {
+// q0004_median_of_two_sorted_arrays
+
+struct Solution;
+
+impl Solution {
     pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
         let m = nums1.len();
         let n = nums2.len();
@@ -60,5 +63,18 @@ impl Merge {
             self.i2 += 1;
             return self.nums2[self.i2 - 1];
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::Solution;
+
+    #[test]
+    fn it_works() {
+        assert_eq!(
+            Solution::find_median_sorted_arrays(vec![1, 3], vec![2]),
+            2.0
+        );
     }
 }
