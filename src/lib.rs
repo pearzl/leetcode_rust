@@ -45,6 +45,8 @@ mod answer {
 
     mod q0037_sudoku_solver;
 
-    mod q0038_count_and_say; 
+    mod q0038_count_and_say;
+
+    mod q0039_combination_sum;
 
 }
