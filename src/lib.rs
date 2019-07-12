@@ -1,4 +1,3 @@
-
 mod util;
 
 #[allow(dead_code)]
@@ -33,13 +32,15 @@ mod answer {
     mod q0028_implement_strstr;
     mod q0029_divide_two_integers;
     mod q0030_substring_with_concatenation_of_all_words;
-    mod q0031_next_permutation; 
-    mod q0032_longest_valid_parentheses; 
+    mod q0031_next_permutation;
+    mod q0032_longest_valid_parentheses;
 
-    mod q0033_search_in_rotated_sorted_array; 
+    mod q0033_search_in_rotated_sorted_array;
 
-    mod q0034_find_first_and_last_position_of_element_in_sorted_array; 
+    mod q0034_find_first_and_last_position_of_element_in_sorted_array;
 
-    mod q0035_search_insert_position; 
+    mod q0035_search_insert_position;
+
+    mod q0036_valid_sudoku;
 
 }

@@ -42,7 +42,7 @@ fn main() {
     let lib_file = "src/lib.rs";
     let append_content = format!("    mod {}; \n", title);
     let mut content = fs::read(lib_file).unwrap();
-    while let Some(c) = content.pop(){
+    while let Some(c) = content.pop() {
         if c == b'}' {
             break;
         }

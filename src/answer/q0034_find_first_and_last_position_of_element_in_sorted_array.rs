@@ -1,5 +1,4 @@
-// q0034_find_first_and_last_position_of_element_in_sorted_array 
-
+// q0034_find_first_and_last_position_of_element_in_sorted_array
 
 struct Solution;
 
@@ -12,12 +11,12 @@ impl Solution {
                 while p1 >= 0 && nums[p1 as usize] == target {
                     p1 -= 1
                 }
-                while p2  <= (nums.len()-1) as i32 && nums[p2 as usize] == target {
+                while p2 <= (nums.len() - 1) as i32 && nums[p2 as usize] == target {
                     p2 += 1;
                 }
-                vec![p1+1, p2-1]
-            },
-            Err(_) => vec![-1, -1]
+                vec![p1 + 1, p2 - 1]
+            }
+            Err(_) => vec![-1, -1],
         }
     }
 }
@@ -28,8 +27,13 @@ mod tests {
 
     #[test]
     fn it_works() {
-        assert_eq!( vec![3,4], Solution::search_range(vec![5,7,7,8,8,10], 8));
-        assert_eq!( vec![-1,-1], Solution::search_range(vec![5,7,7,8,8,10], 6));
+        assert_eq!(
+            vec![3, 4],
+            Solution::search_range(vec![5, 7, 7, 8, 8, 10], 8)
+        );
+        assert_eq!(
+            vec![-1, -1],
+            Solution::search_range(vec![5, 7, 7, 8, 8, 10], 6)
+        );
     }
 }
-
