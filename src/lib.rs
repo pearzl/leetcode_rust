@@ -49,4 +49,6 @@ mod answer {
 
     mod q0039_combination_sum;
 
+    mod q0040_combination_sum_ii; 
+
 }
