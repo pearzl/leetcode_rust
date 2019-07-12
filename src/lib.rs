@@ -45,4 +45,6 @@ mod answer {
 
     mod q0037_sudoku_solver;
 
+    mod q0038_count_and_say; 
+
 }
