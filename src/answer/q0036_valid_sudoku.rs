@@ -46,12 +46,12 @@ mod tests {
     use super::Solution;
 
     use crate::util;
-    
+
     #[test]
     fn it_works() {
         // assert_eq!(
         //     true,
-        //     Solution::is_valid_sudoku(util::build([
+        //     Solution::is_valid_sudoku(util::build_sudo([
         //         ["5", "3", ".", ".", "7", ".", ".", ".", "."],
         //         ["6", ".", ".", "1", "9", "5", ".", ".", "."],
         //         [".", "9", "8", ".", ".", ".", ".", "6", "."],
@@ -65,7 +65,7 @@ mod tests {
         // );
         // assert_eq!(
         //     false,
-        //     Solution::is_valid_sudoku(util::build([
+        //     Solution::is_valid_sudoku(util::build_sudo([
         //         ["8", "3", ".", ".", "7", ".", ".", ".", "."],
         //         ["6", ".", ".", "1", "9", "5", ".", ".", "."],
         //         [".", "9", "8", ".", ".", ".", ".", "6", "."],
@@ -79,7 +79,7 @@ mod tests {
         // );
         assert_eq!(
             true,
-            Solution::is_valid_sudoku(util::build([
+            Solution::is_valid_sudoku(util::build_sudo([
                 [".", "8", "7", "6", "5", "4", "3", "2", "1"],
                 ["2", ".", ".", ".", ".", ".", ".", ".", "."],
                 ["3", ".", ".", ".", ".", ".", ".", ".", "."],

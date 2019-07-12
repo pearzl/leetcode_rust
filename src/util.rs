@@ -30,10 +30,15 @@ pub fn vec_2_set<T: Clone + std::hash::Hash + Eq>(v: Vec<T>) -> std::collections
 }
 
 pub fn build_sudo(s: [[&str; 9]; 9]) -> Vec<Vec<char>> {
-        let mut ret = vec![];
-        for line in s.iter() {
-            ret.push(line.iter().map(|c| c.chars().next().unwrap()).collect());
-        }
-        ret
+    let mut ret = vec![];
+    for line in s.iter() {
+        ret.push(line.iter().map(|c| c.chars().next().unwrap()).collect());
     }
+    ret
+}
 
+pub fn print_sudo(sudo: Vec<Vec<char>>) {
+    for v in sudo.iter() {
+        println!("{:?}", v);
+    }
+}
