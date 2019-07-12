@@ -28,3 +28,12 @@ impl ListNode {
 pub fn vec_2_set<T: Clone + std::hash::Hash + Eq>(v: Vec<T>) -> std::collections::HashSet<T> {
     v.iter().cloned().collect()
 }
+
+fn build_sudo(s: [[&str; 9]; 9]) -> Vec<Vec<char>> {
+        let mut ret = vec![];
+        for line in s.iter() {
+            ret.push(line.iter().map(|c| c.chars().next().unwrap()).collect());
+        }
+        ret
+    }
+

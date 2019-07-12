@@ -45,19 +45,13 @@ impl Solution {
 mod tests {
     use super::Solution;
 
-    fn build(s: [[&str; 9]; 9]) -> Vec<Vec<char>> {
-        let mut ret = vec![];
-        for line in s.iter() {
-            ret.push(line.iter().map(|c| c.chars().next().unwrap()).collect());
-        }
-        ret
-    }
-
+    use crate::util;
+    
     #[test]
     fn it_works() {
         // assert_eq!(
         //     true,
-        //     Solution::is_valid_sudoku(build([
+        //     Solution::is_valid_sudoku(util::build([
         //         ["5", "3", ".", ".", "7", ".", ".", ".", "."],
         //         ["6", ".", ".", "1", "9", "5", ".", ".", "."],
         //         [".", "9", "8", ".", ".", ".", ".", "6", "."],
@@ -71,7 +65,7 @@ mod tests {
         // );
         // assert_eq!(
         //     false,
-        //     Solution::is_valid_sudoku(build([
+        //     Solution::is_valid_sudoku(util::build([
         //         ["8", "3", ".", ".", "7", ".", ".", ".", "."],
         //         ["6", ".", ".", "1", "9", "5", ".", ".", "."],
         //         [".", "9", "8", ".", ".", ".", ".", "6", "."],
@@ -85,7 +79,7 @@ mod tests {
         // );
         assert_eq!(
             true,
-            Solution::is_valid_sudoku(build([
+            Solution::is_valid_sudoku(util::build([
                 [".", "8", "7", "6", "5", "4", "3", "2", "1"],
                 ["2", ".", ".", ".", ".", ".", ".", ".", "."],
                 ["3", ".", ".", ".", ".", ".", ".", ".", "."],
