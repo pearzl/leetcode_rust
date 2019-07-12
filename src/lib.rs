@@ -43,4 +43,6 @@ mod answer {
 
     mod q0036_valid_sudoku;
 
+    mod q0037_sudoku_solver;
+
 }
