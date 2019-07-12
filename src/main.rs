@@ -6,9 +6,9 @@ const TEMPLATE: &'static str = r###"
 
 struct Solution;
 
-impl Solution {
-    
-}
+
+
+
 
 #[cfg(test)]
 mod tests {
