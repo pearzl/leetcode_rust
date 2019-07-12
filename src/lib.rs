@@ -51,4 +51,6 @@ mod answer {
 
     mod q0040_combination_sum_ii; 
 
+    mod q0041_first_missing_positive; 
+
 }
