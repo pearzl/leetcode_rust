@@ -40,4 +40,6 @@ mod answer {
 
     mod q0034_find_first_and_last_position_of_element_in_sorted_array; 
 
+    mod q0035_search_insert_position; 
+
 }
