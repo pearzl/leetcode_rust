@@ -51,7 +51,6 @@ struct Solution;
 //     }
 // }
 
-
 impl Solution {
     pub fn combination_sum(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
         let mut candidates = candidates;
@@ -71,15 +70,15 @@ impl Solution {
             println!("working on  {:?}--{}", tmp, sum);
             if sum < target {
                 Solution::solve(&cddt[index..], target, tmp, ret);
-                // tmp.pop();
-            }else if sum == target {
+            // tmp.pop();
+            } else if sum == target {
                 println!("hit!");
                 ret.push(tmp.clone());
                 tmp.pop();
-                return
-            }else {
+                return;
+            } else {
                 tmp.pop();
-                return
+                return;
             }
             tmp.pop();
             println!("end with    {:?}", tmp);
@@ -157,16 +156,16 @@ mod tests {
     //         ]
     //     );
 
-        // let mut ret = vec![];
-        // let src = vec![1,2,3,4,5];
-        // let tmp = vec![];
-        // Solution::combine(&src, 1, tmp, &mut ret);
-        // assert_eq!(ret, vec![
-        //     vec![2],
-        //     vec![3],
-        //     vec![4],
-        //     vec![5],
-        //     vec![1],
-        // ]);
+    // let mut ret = vec![];
+    // let src = vec![1,2,3,4,5];
+    // let tmp = vec![];
+    // Solution::combine(&src, 1, tmp, &mut ret);
+    // assert_eq!(ret, vec![
+    //     vec![2],
+    //     vec![3],
+    //     vec![4],
+    //     vec![5],
+    //     vec![1],
+    // ]);
     // }
 }

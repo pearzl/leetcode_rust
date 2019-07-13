@@ -1,5 +1,4 @@
-// q0040_combination_sum_ii 
-
+// q0040_combination_sum_ii
 
 struct Solution;
 
@@ -27,19 +26,17 @@ impl Solution {
             if sum == target {
                 ret.push(tmp.clone());
                 tmp.pop();
-                return
-            }else if sum > target {
+                return;
+            } else if sum > target {
                 tmp.pop();
-                return
-            }else {
-                Solution::solve(&cddt[index+1..], target, tmp, ret);
+                return;
+            } else {
+                Solution::solve(&cddt[index + 1..], target, tmp, ret);
                 tmp.pop();
             }
         }
     }
 }
-
-
 
 #[cfg(test)]
 mod tests {
@@ -47,12 +44,9 @@ mod tests {
 
     #[test]
     fn it_works() {
-        assert_eq!(Solution::combination_sum2(vec![10,1,2,7,6,1,5], 8) , vec![
-        vec![1, 7],
-        vec![1, 2, 5],
-        vec![2, 6],
-        vec![1, 1, 6]
-] );
+        assert_eq!(
+            Solution::combination_sum2(vec![10, 1, 2, 7, 6, 1, 5], 8),
+            vec![vec![1, 7], vec![1, 2, 5], vec![2, 6], vec![1, 1, 6]]
+        );
     }
 }
-
