@@ -53,4 +53,6 @@ mod answer {
 
     mod q0041_first_missing_positive; 
 
+    mod q0042_trapping_rain_water; 
+
 }
