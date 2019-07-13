@@ -49,10 +49,12 @@ mod answer {
 
     mod q0039_combination_sum;
 
-    mod q0040_combination_sum_ii; 
+    mod q0040_combination_sum_ii;
 
-    mod q0041_first_missing_positive; 
+    mod q0041_first_missing_positive;
 
-    mod q0042_trapping_rain_water; 
+    mod q0042_trapping_rain_water;
+
+    mod q0043_multiply_strings;
 
 }
