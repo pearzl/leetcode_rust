@@ -11,7 +11,7 @@ impl Solution {
         let bnum2 = num2.as_bytes();
         for (i, c1) in num1.as_bytes().iter().enumerate() {
             let mut tmp = vec![];
-            for n in 0..num1.len() - i - 1 {
+            for _ in 0..num1.len() - i - 1 {
                 tmp.push(0);
             }
             let mut overflow = 0;
