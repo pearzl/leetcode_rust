@@ -57,12 +57,14 @@ mod answer {
 
     mod q0043_multiply_strings;
 
-    mod q0044_wildcard_matching; 
+    mod q0044_wildcard_matching;
 
-    mod q0045_jump_game_ii; 
+    mod q0045_jump_game_ii;
 
-    mod q0046_permutations; 
+    mod q0046_permutations;
 
-    mod q0047_permutations_ii; 
+    mod q0047_permutations_ii;
+
+    mod q0048_rotate_image;
 
 }
