@@ -1,5 +1,4 @@
-// q0046_permutations 
-
+// q0046_permutations
 
 struct Solution;
 
@@ -12,7 +11,7 @@ impl Solution {
             let mut tmp2 = Solution::permute(netp);
             if tmp2.len() == 0 {
                 ret.push(tmp);
-            }else{
+            } else {
                 for v in tmp2.iter_mut() {
                     let mut t = tmp.clone();
                     t.append(v);
@@ -24,22 +23,22 @@ impl Solution {
     }
 }
 
-
-
 #[cfg(test)]
 mod tests {
     use super::Solution;
 
     #[test]
     fn it_works() {
-        assert_eq!( vec![
-  vec![1,2,3],
-  vec![1,3,2],
-  vec![2,1,3],
-  vec![2,3,1],
-  vec![3,1,2],
-  vec![3,2,1]
-], Solution::permute(vec![1,1,3]));
+        assert_eq!(
+            vec![
+                vec![1, 2, 3],
+                vec![1, 3, 2],
+                vec![2, 1, 3],
+                vec![2, 3, 1],
+                vec![3, 1, 2],
+                vec![3, 2, 1]
+            ],
+            Solution::permute(vec![1, 1, 3])
+        );
     }
 }
-

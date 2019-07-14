@@ -1,5 +1,4 @@
-// q0044_wildcard_matching 
-
+// q0044_wildcard_matching
 
 struct Solution;
 
@@ -44,7 +43,7 @@ struct Solution;
 //             }
 //             false
 //         }
-        
+
 //     }
 
 //     fn smatch_one_pattern(pattern: &str, s: &str) -> Vec<usize> {
@@ -71,17 +70,17 @@ impl Solution {
         if p == "" {
             if s == "" {
                 return true;
-            }else {
+            } else {
                 return false;
             }
         }
 
         let mut p = p;
-        loop{
+        loop {
             let tp = p.replace("**", "*");
             if tp == p {
                 break;
-            }else {
+            } else {
                 p = tp;
             }
         }
@@ -124,7 +123,7 @@ impl Solution {
 
     // fn match_patterns(s: String ,)
 
-    fn match_pos(c: char, patterns: &Vec<char>, from: &mut Vec<usize>){
+    fn match_pos(c: char, patterns: &Vec<char>, from: &mut Vec<usize>) {
         let mut ret = HashSet::new();
         for ofst in from.iter() {
             if *ofst >= patterns.len() {
@@ -134,24 +133,23 @@ impl Solution {
             if p == '*' {
                 ret.insert(*ofst);
                 if ofst + 1 < patterns.len() {
-                    let np = patterns[ofst+1];
+                    let np = patterns[ofst + 1];
                     if np == '?' {
-                        ret.insert(ofst+2);
-                    }else if np == c {
-                        ret.insert(ofst+2);
+                        ret.insert(ofst + 2);
+                    } else if np == c {
+                        ret.insert(ofst + 2);
                     }
                 }
-            }else if p == '?' {
-                ret.insert(ofst+1);
-            }else if p == c {
-                ret.insert(ofst+1);
-            }           
+            } else if p == '?' {
+                ret.insert(ofst + 1);
+            } else if p == c {
+                ret.insert(ofst + 1);
+            }
         }
         let r: Vec<usize> = ret.iter().cloned().collect();
         std::mem::replace(from, r);
     }
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -159,17 +157,49 @@ mod tests {
 
     #[test]
     fn it_works() {
-        assert_eq!( true, Solution::is_match(String::from(""), String::from("******")) );
-        assert_eq!( true, Solution::is_match(String::from(""), String::from("")) );
-        assert_eq!( false, Solution::is_match(String::from("1"), String::from("")) );
-        assert_eq!( false, Solution::is_match(String::from("aa"), String::from("a")) );
-        assert_eq!( true, Solution::is_match(String::from("aa"), String::from("a*")) );
-        assert_eq!( false, Solution::is_match(String::from("cb"), String::from("?a")) );
-        assert_eq!( true, Solution::is_match(String::from("adceb"), String::from("*a*b")) );
-        assert_eq!( true, Solution::is_match(String::from("acdcb"), String::from("acdcb*******")) );
-        assert_eq!( false, Solution::is_match(String::from("acdcb"), String::from("**a*c?b")) );
-        assert_eq!( false, Solution::is_match(String::from("aaabbbaabaaaaababaabaaabbabbbbbbbbaabababbabbbaaaaba"), String::from("a*******b")) );
-        assert_eq!( false, Solution::is_match(String::from("mississippi"), String::from("m??*ss*?i*pi")) );
+        assert_eq!(
+            true,
+            Solution::is_match(String::from(""), String::from("******"))
+        );
+        assert_eq!(true, Solution::is_match(String::from(""), String::from("")));
+        assert_eq!(
+            false,
+            Solution::is_match(String::from("1"), String::from(""))
+        );
+        assert_eq!(
+            false,
+            Solution::is_match(String::from("aa"), String::from("a"))
+        );
+        assert_eq!(
+            true,
+            Solution::is_match(String::from("aa"), String::from("a*"))
+        );
+        assert_eq!(
+            false,
+            Solution::is_match(String::from("cb"), String::from("?a"))
+        );
+        assert_eq!(
+            true,
+            Solution::is_match(String::from("adceb"), String::from("*a*b"))
+        );
+        assert_eq!(
+            true,
+            Solution::is_match(String::from("acdcb"), String::from("acdcb*******"))
+        );
+        assert_eq!(
+            false,
+            Solution::is_match(String::from("acdcb"), String::from("**a*c?b"))
+        );
+        assert_eq!(
+            false,
+            Solution::is_match(
+                String::from("aaabbbaabaaaaababaabaaabbabbbbbbbbaabababbabbbaaaaba"),
+                String::from("a*******b")
+            )
+        );
+        assert_eq!(
+            false,
+            Solution::is_match(String::from("mississippi"), String::from("m??*ss*?i*pi"))
+        );
     }
 }
-
