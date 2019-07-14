@@ -61,4 +61,6 @@ mod answer {
 
     mod q0045_jump_game_ii; 
 
+    mod q0046_permutations; 
+
 }
