@@ -32,8 +32,8 @@ pub fn vec_2_set<T: Clone + std::hash::Hash + Eq>(v: Vec<T>) -> HashSet<T> {
 }
 
 pub fn compare_nest2_vec<T: Ord + Clone + std::hash::Hash + Eq>(
-    mut a: Vec<Vec<T>>,
-    mut b: Vec<Vec<T>>,
+    a: Vec<Vec<T>>,
+    b: Vec<Vec<T>>,
 ) -> bool {
     let aa: HashSet<Vec<T>> = a
         .into_iter()

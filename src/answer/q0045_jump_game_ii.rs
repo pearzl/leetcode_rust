@@ -18,7 +18,7 @@ impl Solution {
         if *cur + sight >= nums.len() - 1 {
             return;
         }
-        let mut next_pos = *cur;
+        let next_pos = *cur;
         for i in *cur..=*cur + sight {
             let farthest = i + nums[i] as usize;
             if farthest > *cur + nums[*cur] as usize {

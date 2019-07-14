@@ -11,7 +11,7 @@ impl Solution {
                 .iter()
                 .cloned()
                 .enumerate()
-                .filter(|(j, n)| *j != i)
+                .filter(|(j, _)| *j != i)
                 .map(|x| x.1)
                 .collect();
             let mut tmp2 = Solution::permute_unique(netp);
