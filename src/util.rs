@@ -60,7 +60,7 @@ pub fn build_sudo(s: [[&str; 9]; 9]) -> Vec<Vec<char>> {
     ret
 }
 
-pub fn print_sudo(sudo: Vec<Vec<char>>) {
+pub fn print_sudo<T: std::fmt::Debug>(sudo: Vec<Vec<T>>) {
     for v in sudo.iter() {
         println!("{:?}", v);
     }
