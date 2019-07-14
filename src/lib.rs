@@ -73,4 +73,6 @@ mod answer {
 
     mod q0051_n_queens; 
 
+    mod q0052_n_queens_ii; 
+
 }
