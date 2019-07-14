@@ -69,4 +69,6 @@ mod answer {
 
     mod q0049_group_anagrams;
 
+    mod q0050_powx_n; 
+
 }
