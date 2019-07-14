@@ -67,4 +67,6 @@ mod answer {
 
     mod q0048_rotate_image;
 
+    mod q0049_group_anagrams;
+
 }
