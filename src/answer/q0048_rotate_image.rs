@@ -8,7 +8,7 @@ impl Solution {
         let n = matrix.len();
         let mut start = 0;
         let mut end = n - 1;
-        for i in 0..n/2 {
+        for i in 0..n / 2 {
             for j in start..end {
                 ele_picked.push((i, j));
             }
@@ -19,13 +19,13 @@ impl Solution {
             }
         }
         // println!("{:?}", ele_picked);
-        for (i,j) in ele_picked.iter().cloned() {
+        for (i, j) in ele_picked.iter().cloned() {
             let (mut dsti, mut dstj) = (i, j);
             let mut tv = matrix[i][j];
             for _ in 0..4 {
                 std::mem::swap(&mut dsti, &mut dstj);
-                dstj = n-1-dstj;
-                tv = std::mem::replace(&mut matrix[dsti][dstj] , tv);
+                dstj = n - 1 - dstj;
+                tv = std::mem::replace(&mut matrix[dsti][dstj], tv);
             }
         }
     }
