@@ -25,8 +25,31 @@ impl ListNode {
     }
 }
 
-pub fn vec_2_set<T: Clone + std::hash::Hash + Eq>(v: Vec<T>) -> std::collections::HashSet<T> {
+use std::collections::HashSet;
+
+pub fn vec_2_set<T: Clone + std::hash::Hash + Eq>(v: Vec<T>) -> HashSet<T> {
     v.iter().cloned().collect()
+}
+
+pub fn compare_nest2_vec<T: Ord + Clone + std::hash::Hash + Eq>(
+    mut a: Vec<Vec<T>>,
+    mut b: Vec<Vec<T>>,
+) -> bool {
+    let aa: HashSet<Vec<T>> = a
+        .into_iter()
+        .map(|mut v| {
+            v.sort_unstable();
+            v
+        })
+        .collect();
+    let bb: HashSet<Vec<T>> = b
+        .into_iter()
+        .map(|mut v| {
+            v.sort_unstable();
+            v
+        })
+        .collect();
+    aa == bb
 }
 
 pub fn build_sudo(s: [[&str; 9]; 9]) -> Vec<Vec<char>> {
