@@ -71,4 +71,6 @@ mod answer {
 
     mod q0050_powx_n; 
 
+    mod q0051_n_queens; 
+
 }
