@@ -69,12 +69,14 @@ mod answer {
 
     mod q0049_group_anagrams;
 
-    mod q0050_powx_n; 
+    mod q0050_powx_n;
 
-    mod q0051_n_queens; 
+    mod q0051_n_queens;
 
-    mod q0052_n_queens_ii; 
+    mod q0052_n_queens_ii;
 
-    mod q0053_maximum_subarray; 
+    mod q0053_maximum_subarray;
+
+    mod q0054_spiral_matrix;
 
 }
