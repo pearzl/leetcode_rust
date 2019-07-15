@@ -79,4 +79,6 @@ mod answer {
 
     mod q0054_spiral_matrix;
 
+    mod q0055_jump_game;
+
 }
