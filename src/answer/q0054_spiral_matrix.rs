@@ -6,13 +6,13 @@ impl Solution {
     pub fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
         let line = matrix.len();
         if line == 0 {
-            return vec![]
+            return vec![];
         }
         let row = matrix[0].len();
         let mut robot = Robot::new(line, row);
         // robot.map(|(i, j)| matrix[i][j]).cloned().collect()
         let mut ret = vec![];
-        while let Some((i,j)) = robot.next() {
+        while let Some((i, j)) = robot.next() {
             // println!("{:?}", (i, j));
             ret.push(matrix[i][j]);
         }
@@ -25,7 +25,7 @@ enum Direction {
     D,
     L,
     R,
-    E
+    E,
 }
 
 struct Robot {
@@ -61,10 +61,10 @@ impl std::iter::Iterator for Robot {
                 } else {
                     new_pos_line -= 1;
                 }
-            },
+            }
             Direction::D => {
                 if self.cur_pos.0 + 1 > self.boundary.2 {
-                    if new_pos_row >= self.boundary.3 + 1{
+                    if new_pos_row >= self.boundary.3 + 1 {
                         self.direction = Direction::L;
                         self.boundary.1 -= 1;
                         new_pos_row -= 1;
@@ -72,10 +72,10 @@ impl std::iter::Iterator for Robot {
                 } else {
                     new_pos_line += 1;
                 }
-            },
+            }
             Direction::L => {
                 if self.cur_pos.1 < self.boundary.3 + 1 {
-                    if new_pos_line >= self.boundary.0 + 1{
+                    if new_pos_line >= self.boundary.0 + 1 {
                         self.direction = Direction::U;
                         self.boundary.2 -= 1;
                         new_pos_line -= 1;
@@ -83,7 +83,7 @@ impl std::iter::Iterator for Robot {
                 } else {
                     new_pos_row -= 1;
                 }
-            },
+            }
             Direction::R => {
                 if self.cur_pos.1 + 1 > self.boundary.1 {
                     if new_pos_line + 1 <= self.boundary.2 {
@@ -94,13 +94,16 @@ impl std::iter::Iterator for Robot {
                 } else {
                     new_pos_row += 1;
                 }
-            },
-            Direction::E => return None
+            }
+            Direction::E => return None,
         }
         if new_pos_line == self.cur_pos.0 && new_pos_row == self.cur_pos.1 {
             self.direction = Direction::E;
         }
-        return Some(std::mem::replace(&mut self.cur_pos, (new_pos_line, new_pos_row)));
+        return Some(std::mem::replace(
+            &mut self.cur_pos,
+            (new_pos_line, new_pos_row),
+        ));
     }
 }
 
