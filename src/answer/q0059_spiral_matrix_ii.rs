@@ -10,7 +10,7 @@ impl Solution {
         let mut ret = Vec::with_capacity(n as usize);
         for _ in 0..n {
             // ret.push(Vec::with_capacity(n as usize)); // leetcode didn't pass this, but it works on my computer
-            ret.push(vec![0; n]);
+            ret.push(vec![0; n as usize]);
         }
         let mut robot = Robot::new(n as usize, n as usize);
         let mut index = 1;
