@@ -89,4 +89,6 @@ mod answer {
 
     mod q0059_spiral_matrix_ii;
 
+    mod q0060_permutation_sequence;
+
 }
