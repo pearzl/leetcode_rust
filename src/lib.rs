@@ -93,4 +93,6 @@ mod answer {
 
     mod q0061_rotate_list;
 
+    mod q0062_unique_paths;
+
 }
