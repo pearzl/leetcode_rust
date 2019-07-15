@@ -91,4 +91,6 @@ mod answer {
 
     mod q0060_permutation_sequence;
 
+    mod q0061_rotate_list;
+
 }
