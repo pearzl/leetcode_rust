@@ -97,4 +97,6 @@ mod answer {
 
     mod q0063_unique_paths_ii;
 
+    mod q0064_minimum_path_sum;
+
 }
