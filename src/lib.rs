@@ -95,4 +95,6 @@ mod answer {
 
     mod q0062_unique_paths;
 
+    mod q0063_unique_paths_ii;
+
 }
