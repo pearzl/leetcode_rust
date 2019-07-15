@@ -83,4 +83,6 @@ mod answer {
 
     mod q0056_merge_intervals;
 
+    mod q0057_insert_interval;
+
 }
