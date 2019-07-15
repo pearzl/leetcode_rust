@@ -85,4 +85,6 @@ mod answer {
 
     mod q0057_insert_interval;
 
+    mod q0058_length_of_last_word;
+
 }
