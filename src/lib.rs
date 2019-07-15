@@ -81,4 +81,6 @@ mod answer {
 
     mod q0055_jump_game;
 
+    mod q0056_merge_intervals;
+
 }
