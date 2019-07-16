@@ -57,7 +57,7 @@ mod tests {
 
         assert_eq!(true, Solution::search_matrix(vec![vec![13]], 13));
         assert_eq!(false, Solution::search_matrix(vec![vec![14]], 13));
-        assert_eq!(false, Solution::search_matrix(vec![vec![12],vec![14]], 13));
-        assert_eq!(true, Solution::search_matrix(vec![vec![13],vec![14]], 13));
+        assert_eq!(false, Solution::search_matrix(vec![vec![12], vec![14]], 13));
+        assert_eq!(true, Solution::search_matrix(vec![vec![13], vec![14]], 13));
     }
 }
