@@ -109,4 +109,6 @@ mod answer {
 
     mod q0069_sqrtx;
 
+    mod q0070_runclimbing_stairs;
+
 }
