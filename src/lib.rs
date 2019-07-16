@@ -103,4 +103,6 @@ mod answer {
 
     mod q0067_add_binary;
 
+    mod q0066_plus_one;
+
 }
