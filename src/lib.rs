@@ -111,4 +111,6 @@ mod answer {
 
     mod q0070_runclimbing_stairs;
 
+    mod q0071_simplify_path;
+
 }
