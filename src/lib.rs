@@ -101,4 +101,6 @@ mod answer {
 
     mod q0065_valid_number;
 
+    mod q0067_add_binary;
+
 }
