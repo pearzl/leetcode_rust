@@ -2,7 +2,6 @@
 
 struct Solution;
 
-
 impl Solution {
     pub fn is_number(s: String) -> bool {
         let input = s.trim();
@@ -13,112 +12,120 @@ impl Solution {
         let mut base = String::new();
         let mut state = 0;
         for &c in input.as_bytes() {
-            if base_exp == 0 { //base 
-                if state == 0 { // start
+            if base_exp == 0 {
+                //base
+                if state == 0 {
+                    // start
                     if c == b'+' || c == b'-' {
                         state = 1;
-                    }else if c >= b'0' && c <= b'9' {
+                    } else if c >= b'0' && c <= b'9' {
                         state = 2;
                         base.push(c as char)
-                    }else if c == b'.' {
+                    } else if c == b'.' {
                         state = 3;
                         base.push(c as char)
-                    }else {
-                        return false
+                    } else {
+                        return false;
                     }
-                }else if state == 1 { // flag +/-
+                } else if state == 1 {
+                    // flag +/-
                     if c >= b'0' && c <= b'9' {
                         state = 2;
                         base.push(c as char)
-                    }else if c == b'.' {
+                    } else if c == b'.' {
                         state = 3;
                         base.push(c as char)
-                    }else {
-                        return false
+                    } else {
+                        return false;
                     }
-                }else if state == 2 { // integers
+                } else if state == 2 {
+                    // integers
                     if c >= b'0' && c <= b'9' {
                         base.push(c as char)
-                    }else if c == b'.' {
+                    } else if c == b'.' {
                         state = 3;
                         base.push(c as char)
-                    }else if c == b'e' || c == b'E' {
+                    } else if c == b'e' || c == b'E' {
                         if base == "." {
-                            return false
-                        }else {
+                            return false;
+                        } else {
                             state = 0;
                             base_exp = 1;
                         }
-                    }else {
-                        return false
+                    } else {
+                        return false;
                     }
-                }else if state == 3 {// radix point
+                } else if state == 3 {
+                    // radix point
                     if c >= b'0' && c <= b'9' {
                         state = 4;
                         base.push(c as char)
-                    }else if c == b'e' || c == b'E' {
+                    } else if c == b'e' || c == b'E' {
                         if base == "." {
-                            return false
-                        }else {
+                            return false;
+                        } else {
                             state = 0;
                             base_exp = 1;
                         }
-                    }else {
-                        return false
+                    } else {
+                        return false;
                     }
-                }else if state == 4 { // decimals
+                } else if state == 4 {
+                    // decimals
                     if c >= b'0' && c <= b'9' {
                         base.push(c as char)
-                    }else if c == b'e' || c == b'E' {
+                    } else if c == b'e' || c == b'E' {
                         if base == "." {
-                            return false
-                        }else {
+                            return false;
+                        } else {
                             state = 0;
                             base_exp = 1;
                         }
-                    }else {
-                        return false
+                    } else {
+                        return false;
                     }
-                }else {
+                } else {
                     panic!("1");
                 }
-            }else{
-                if state == 0 { // start
+            } else {
+                if state == 0 {
+                    // start
                     if c == b'+' || c == b'-' {
                         state = 1;
-                    }else if c >= b'0' && c <= b'9' {
+                    } else if c >= b'0' && c <= b'9' {
                         state = 2;
-                    }else {
-                        return false
+                    } else {
+                        return false;
                     }
-                }else if state == 1 {   // flag
+                } else if state == 1 {
+                    // flag
                     if c >= b'0' && c <= b'9' {
                         state = 2;
-                    }else {
-                        return false
+                    } else {
+                        return false;
                     }
-                }else if state == 2 {   // number
+                } else if state == 2 {
+                    // number
                     if !(c >= b'0' && c <= b'9') {
-                        return false
+                        return false;
                     }
-                }else {
+                } else {
                     panic!(2);
                 }
             }
         }
         if base_exp == 1 && state == 2 {
             return true;
-        }else if base_exp == 0 {
+        } else if base_exp == 0 {
             if base != "." {
                 return true;
-            }else {
+            } else {
                 return false;
             }
-        }else {
+        } else {
             return false;
         }
     }
-
 }
 
 #[cfg(test)]
