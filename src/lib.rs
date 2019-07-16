@@ -113,4 +113,10 @@ mod answer {
 
     mod q0071_simplify_path;
 
+    mod q0072_edit_distance;
+
+    mod q0073_set_matrix_zeroes;
+
+    mod q0074_search_a_2d_matrix;
+
 }
