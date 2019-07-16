@@ -107,4 +107,6 @@ mod answer {
 
     mod q0068_text_justification;
 
+    mod q0069_sqrtx;
+
 }
