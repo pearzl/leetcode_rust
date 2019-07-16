@@ -99,4 +99,6 @@ mod answer {
 
     mod q0064_minimum_path_sum;
 
+    mod q0065_valid_number;
+
 }
