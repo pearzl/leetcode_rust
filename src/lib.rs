@@ -119,4 +119,6 @@ mod answer {
 
     mod q0074_search_a_2d_matrix;
 
+    mod q0075_sort_colors;
+
 }
