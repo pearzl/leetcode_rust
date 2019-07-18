@@ -144,4 +144,6 @@ mod answer {
 
     mod q0086_partition_list;
 
+    mod q0087_scramble_string;
+
 }
