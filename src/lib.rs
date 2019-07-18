@@ -134,4 +134,8 @@ mod answer {
     mod q0080_remove_duplicates_from_sorted_array_ii;
 
     mod q0081_search_in_rotated_sorted_array_ii;
+    mod q0082_remove_duplicates_from_sorted_list_ii; 
+
+    mod q0083_remove_duplicates_from_sorted_list; 
+
 }
