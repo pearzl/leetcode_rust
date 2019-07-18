@@ -4,8 +4,8 @@ struct Solution;
 
 impl Solution {
     pub fn is_scramble(s1: String, s2: String) -> bool {
-        let s3: Vec<u8> = s2.as_bytes().iter().cloned().rev().collect();
-        let s3 = String::from_utf8(s3).unwrap();
+        let t: Vec<u8> = s2.as_bytes().iter().cloned().rev().collect();
+        let s3 = String::from_utf8(t).unwrap();
         Solution::is_scramble1(&s1, &s2) || Solution::is_scramble1(&s1, &s3)
     }
 
@@ -28,19 +28,37 @@ impl Solution {
             // println!("split S1 to {} -- {}", ns1, ns2);
             // println!("split S2 to {} -- {}", &s2[j..j+ns1.len()], &s2[j+ns1.len()..]);
             // println!("split S2 to {} -- {}", &s2[j..j+ns2.len()], &s2[j+ns2.len()..]);
-            let r1 = Solution::is_scramble1(ns1, &s2[j..j + ns1.len()])
-                && Solution::is_scramble1(ns2, &s2[j + ns1.len()..]);
-            if r1 == true {
-                return true;
+
+            let p1s1 = &s2[j..j + ns1.len()];
+            let p1s1r = Solution::reverse(p1s1);
+            let p1r1 = Solution::is_scramble1(ns1, p1s1) || Solution::is_scramble1(ns1, &p1s1r);
+            if p1r1 == true {
+                let p1s2 = &s2[j + ns1.len()..];
+                let p1s2r = Solution::reverse(p1s2);
+                let p1r2 = Solution::is_scramble1(ns2, p1s2) || Solution::is_scramble1(ns2, &p1s2r);
+                if p1r2 == true {
+                    return true
+                }
             }
-            let r2 = Solution::is_scramble1(ns2, &s2[j..j + ns2.len()])
-                && Solution::is_scramble1(ns1, &s2[j + ns2.len()..]);
-            if r2 == true {
-                return true;
+            let p2s1 = &s2[j..j + ns2.len()];
+            let p2s1r = Solution::reverse(p2s1);
+            let p2r1 = Solution::is_scramble1(ns2, p2s1) || Solution::is_scramble1(ns2, &p2s1r);
+            if p2r1 == true {
+                let p2s2 = &s2[j + ns2.len()..];
+                let p2s2r = Solution::reverse(p2s2);
+                let p2r2 = Solution::is_scramble1(ns1, p2s2) || Solution::is_scramble1(ns1, &p2s2r);
+                if p2r2 == true {
+                    return true
+                }
             }
         }
         // println!("S2's first char not found in S1");
         return false;
+    }
+
+    fn reverse(s: &str) -> String {
+        let t: Vec<u8> = s.as_bytes().iter().cloned().rev().collect();
+        String::from_utf8(t).unwrap()
     }
 }
 
