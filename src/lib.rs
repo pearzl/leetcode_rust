@@ -123,4 +123,6 @@ mod answer {
 
     mod q0076_minimum_window_substring;
 
+    mod q0088_merge_sorted_array; 
+
 }
