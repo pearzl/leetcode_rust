@@ -2,32 +2,98 @@
 
 struct Solution;
 
+// impl Solution {
+//     pub fn maximal_rectangle(matrix: Vec<Vec<char>>) -> i32 {
+//         let x2 = matrix.len() as isize;
+//         if x2 == 0 {
+//             return 0;
+//         }
+//         let y2 = matrix[0].len() as isize;
+//         let mut max_area = 0;
+//         Solution::max_in((0, 0, x2, y2), &matrix, &mut max_area);
+//         max_area as i32
+
+//     }
+
+//     pub fn max_in((x1, y1, x2, y2): (isize, isize, isize, isize), area: &Vec<Vec<char>>, max_area: &mut isize){
+//         if y1 >= y2 || x1 >= x2 {
+//             return
+//         }
+//         let cur_area = (x2 - x1) * (y2 - y1);
+//         if cur_area < * max_area {
+//             return
+//         }
+//         for i in x1..x2 {
+//             for j in y1..y2 {
+//                 if area[i as usize][j as usize] == '0' {
+//                     Solution::max_in((x1, y1, i, y2), area, max_area);
+//                     Solution::max_in((i + 1, y1, x2, y2), area, max_area);
+//                     Solution::max_in((x1, y1, x2, j), area, max_area);
+//                     Solution::max_in((x1, j + 1, x2, y2), area, max_area);
+//                     return
+//                 }
+//             }
+//         }
+//         // println!("{}--{},{}-{}-{}-{}", *max_area, (x2 - x1) * (y2 - y1), x1, x2, y1, y2);
+//        *max_area = cur_area;
+//     }
+// }
+
 impl Solution {
     pub fn maximal_rectangle(matrix: Vec<Vec<char>>) -> i32 {
-        let x2 = matrix.len() as isize;
-        if x2 == 0 {
-            return 0;
+        let mut maxv = 0;
+        for l in 0..matrix.len() {
+            let heights = Solution::get_heights(&matrix[0..=l]);
+            let tm = Solution::largest_rectangle_area(heights);
+            maxv = maxv.max(tm);
         }
-        let y2 = matrix[0].len() as isize;
-        Solution::max_in((0, 0, x2, y2), &matrix) as i32
+        maxv
     }
 
-    pub fn max_in((x1, y1, x2, y2): (isize, isize, isize, isize), area: &Vec<Vec<char>>) -> isize {
-        if y1 >= y2 || x1 >= x2 {
-            return 0;
-        }
-        for i in x1..x2 {
-            for j in y1..y2 {
-                if area[i as usize][j as usize] == '0' {
-                    let a1 = Solution::max_in((x1, y1, i, y2), area);
-                    let a2 = Solution::max_in((i + 1, y1, x2, y2), area);
-                    let a3 = Solution::max_in((x1, y1, x2, j), area);
-                    let a4 = Solution::max_in((x1, j + 1, x2, y2), area);
-                    return a1.max(a2).max(a3).max(a4);
+    fn get_heights(area: &[Vec<char>]) -> Vec<i32> {
+        let mut ret = vec![];
+        for row in 0..area[0].len() {
+            let mut count = 0;
+            for line in (0..area.len()).rev() {
+                if area[line][row] == '1' {
+                    count += 1;
+                } else {
+                    break;
                 }
             }
+            ret.push(count);
         }
-        return (x2 - x1) * (y2 - y1);
+        // println!("{:?}", ret);
+        ret
+    }
+
+    fn largest_rectangle_area(heights: Vec<i32>) -> i32 {
+        let mut max_area = vec![];
+        for (i, h) in heights.iter().enumerate() {
+            let mut p1 = i;
+            let mut p2 = i;
+            while p1 > 0 {
+                p1 -= 1;
+                if heights[p1] < *h {
+                    p1 += 1;
+                    break;
+                }
+            }
+            while p2 < heights.len() - 1 {
+                p2 += 1;
+                if heights[p2] < *h {
+                    p2 -= 1;
+                    break;
+                }
+            }
+            let ma = (p2 - p1 + 1) as i32 * *h;
+            max_area.push(ma);
+        }
+        // println!("{:?}", max_area);
+        match max_area.iter().max() {
+            Some(n) => return *n as i32,
+            None => return 0,
+        }
     }
 }
 
@@ -52,6 +118,11 @@ mod tests {
         assert_eq!(0, Solution::maximal_rectangle(vec![vec!['0']]));
 
         assert_eq!(0, Solution::maximal_rectangle(Vec::<Vec<char>>::new()));
+    }
+
+    #[test]
+    // #[ignore]
+    fn performance_test() {
         assert_eq!(
             114,
             Solution::maximal_rectangle(vec![
