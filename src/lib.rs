@@ -138,4 +138,6 @@ mod answer {
 
     mod q0083_remove_duplicates_from_sorted_list;
 
+    mod q0084_largest_rectangle_in_histogram;
+
 }
