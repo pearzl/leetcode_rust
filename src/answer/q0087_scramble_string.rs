@@ -37,7 +37,7 @@ impl Solution {
                 let p1s2r = Solution::reverse(p1s2);
                 let p1r2 = Solution::is_scramble1(ns2, p1s2) || Solution::is_scramble1(ns2, &p1s2r);
                 if p1r2 == true {
-                    return true
+                    return true;
                 }
             }
             let p2s1 = &s2[j..j + ns2.len()];
@@ -48,7 +48,7 @@ impl Solution {
                 let p2s2r = Solution::reverse(p2s2);
                 let p2r2 = Solution::is_scramble1(ns1, p2s2) || Solution::is_scramble1(ns1, &p2s2r);
                 if p2r2 == true {
-                    return true
+                    return true;
                 }
             }
         }
