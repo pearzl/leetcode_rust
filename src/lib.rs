@@ -129,4 +129,6 @@ mod answer {
 
     mod q0078_subsets;
 
+    mod q0079_word_search;
+
 }
