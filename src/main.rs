@@ -41,15 +41,17 @@ fn main() {
 
     let lib_file = "src/lib.rs";
     let append_content = format!("    mod {}; \n", title);
-    let mut content = fs::read(lib_file).unwrap();
-    while let Some(c) = content.pop() {
-        if c == b'}' {
-            break;
-        }
+    let content = fs::read_to_string(lib_file).unwrap();
+    let t: Vec<&str> = content.split(|c| c == '{' || c == '}').collect();
+    let mut new_content = String::from(t[0]);
+    new_content.push_str(" { \n");
+    let mut mods: Vec<&str> = t[1].lines().filter(|s| s.trim() != "").collect();
+    mods.push(&append_content);
+    mods.sort();
+    for m in mods.iter() {
+        new_content.push_str(m);
+        new_content.push('\n');
     }
-    content.append(&mut append_content.into_bytes());
-    content.push(b'\n');
-    content.push(b'}');
-    content.push(b'\n');
-    fs::write(lib_file, content).unwrap();
+    new_content.push_str("}\n");
+    fs::write(lib_file, new_content).unwrap();
 }
