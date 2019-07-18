@@ -127,4 +127,6 @@ mod answer {
 
     mod q0077_combinations;
 
+    mod q0078_subsets;
+
 }
