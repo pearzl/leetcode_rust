@@ -140,4 +140,6 @@ mod answer {
 
     mod q0084_largest_rectangle_in_histogram;
 
+    mod q0085_maximal_rectangle;
+
 }
