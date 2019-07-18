@@ -23,6 +23,16 @@ impl ListNode {
         }
         ret
     }
+
+    pub fn into_vec(head: Option<Box<ListNode>>) -> Vec<i32> {
+        let mut tmp = vec![];
+        let mut head = head;
+        while let Some(ln) = head {
+            tmp.push(ln.val);
+            head = ln.next;
+        }
+        tmp
+    }
 }
 
 use std::collections::HashSet;

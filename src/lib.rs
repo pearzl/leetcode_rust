@@ -142,4 +142,6 @@ mod answer {
 
     mod q0085_maximal_rectangle;
 
+    mod q0086_partition_list;
+
 }
