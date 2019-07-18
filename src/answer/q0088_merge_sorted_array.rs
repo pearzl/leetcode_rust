@@ -1,5 +1,4 @@
-// q0088_merge_sorted_array 
-
+// q0088_merge_sorted_array
 
 struct Solution;
 
@@ -13,14 +12,14 @@ impl Solution {
             if m == 0 {
                 n -= 1;
                 nums1[i] = nums2[n];
-            }else if n == 0 {
+            } else if n == 0 {
                 m -= 1;
                 nums1[i] = nums1[m];
-            }else {
-                if nums1[m-1] < nums2[n-1] {
+            } else {
+                if nums1[m - 1] < nums2[n - 1] {
                     n -= 1;
                     nums1[i] = nums2[n];
-                }else {
+                } else {
                     m -= 1;
                     nums1[i] = nums1[m];
                 }
@@ -28,8 +27,6 @@ impl Solution {
         }
     }
 }
-
-
 
 #[cfg(test)]
 mod tests {
@@ -48,7 +45,6 @@ mod tests {
         let mut a2 = vec![1];
         let l2 = a2.len() as i32;
         Solution::merge(&mut a1, l1, &mut a2, l2);
-        assert_eq!( vec![1], a1);
+        assert_eq!(vec![1], a1);
     }
 }
-
