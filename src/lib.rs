@@ -91,5 +91,6 @@ mod answer {
     mod q0087_scramble_string;
     mod q0088_merge_sorted_array;
     mod q0089_gray_code;
+    mod q0090_subsets_ii;
 
 }
