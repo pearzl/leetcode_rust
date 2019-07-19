@@ -92,5 +92,6 @@ mod answer {
     mod q0088_merge_sorted_array;
     mod q0089_gray_code;
     mod q0090_subsets_ii;
+    mod q0091_decode_ways;
 
 }
