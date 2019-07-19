@@ -34,116 +34,62 @@ mod answer {
     mod q0030_substring_with_concatenation_of_all_words;
     mod q0031_next_permutation;
     mod q0032_longest_valid_parentheses;
-
     mod q0033_search_in_rotated_sorted_array;
-
     mod q0034_find_first_and_last_position_of_element_in_sorted_array;
-
     mod q0035_search_insert_position;
-
     mod q0036_valid_sudoku;
-
     mod q0037_sudoku_solver;
-
     mod q0038_count_and_say;
-
     mod q0039_combination_sum;
-
     mod q0040_combination_sum_ii;
-
     mod q0041_first_missing_positive;
-
     mod q0042_trapping_rain_water;
-
     mod q0043_multiply_strings;
-
     mod q0044_wildcard_matching;
-
     mod q0045_jump_game_ii;
-
     mod q0046_permutations;
-
     mod q0047_permutations_ii;
-
     mod q0048_rotate_image;
-
     mod q0049_group_anagrams;
-
     mod q0050_powx_n;
-
     mod q0051_n_queens;
-
     mod q0052_n_queens_ii;
-
     mod q0053_maximum_subarray;
-
     mod q0054_spiral_matrix;
-
     mod q0055_jump_game;
-
     mod q0056_merge_intervals;
-
     mod q0057_insert_interval;
-
     mod q0058_length_of_last_word;
-
     mod q0059_spiral_matrix_ii;
-
     mod q0060_permutation_sequence;
-
     mod q0061_rotate_list;
-
     mod q0062_unique_paths;
-
     mod q0063_unique_paths_ii;
-
     mod q0064_minimum_path_sum;
-
     mod q0065_valid_number;
-
-    mod q0067_add_binary;
-
     mod q0066_plus_one;
-
+    mod q0067_add_binary;
     mod q0068_text_justification;
-
     mod q0069_sqrtx;
-
     mod q0070_runclimbing_stairs;
-
     mod q0071_simplify_path;
-
     mod q0072_edit_distance;
-
     mod q0073_set_matrix_zeroes;
-
     mod q0074_search_a_2d_matrix;
-
     mod q0075_sort_colors;
-
     mod q0076_minimum_window_substring;
-
-    mod q0088_merge_sorted_array;
-
     mod q0077_combinations;
-
     mod q0078_subsets;
-
     mod q0079_word_search;
-
     mod q0080_remove_duplicates_from_sorted_array_ii;
-
     mod q0081_search_in_rotated_sorted_array_ii;
     mod q0082_remove_duplicates_from_sorted_list_ii;
-
     mod q0083_remove_duplicates_from_sorted_list;
-
     mod q0084_largest_rectangle_in_histogram;
-
     mod q0085_maximal_rectangle;
-
     mod q0086_partition_list;
-
     mod q0087_scramble_string;
+    mod q0088_merge_sorted_array;
+    mod q0089_gray_code;
 
 }
