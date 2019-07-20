@@ -98,13 +98,13 @@ mod tests {
             vec![TreeNode::build(vec![Some(1)])],
             Solution::generate_trees(1)
         );
-        // assert_eq!(
-        //     vec![
-        //         TreeNode::build(vec![Some(1), None, Some(2)]),
-        //         TreeNode::build(vec![Some(2), Some(1)])
-        //     ],
-        //     Solution::generate_trees(2)
-        // );
+        assert_eq!(
+            vec![
+                TreeNode::build(vec![Some(2), Some(1)]),
+                TreeNode::build(vec![Some(1), None, Some(2)])
+            ],
+            Solution::generate_trees(2)
+        );
         assert_eq!(
             vec![
                 TreeNode::build(vec![Some(3), Some(2), None, Some(1)]),
