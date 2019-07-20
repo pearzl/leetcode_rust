@@ -120,17 +120,17 @@ impl TreeNode {
             match node {
                 None => {
                     ret.push(None);
-                },
+                }
                 Some(t) => {
                     ret.push(Some(t.borrow().val));
                     if let Some(ref lt) = t.borrow().left {
                         queue.push_back(Some(Rc::clone(lt)));
-                    }else {
+                    } else {
                         queue.push_back(None);
                     }
                     if let Some(ref rt) = t.borrow().right {
                         queue.push_back(Some(Rc::clone(rt)));
-                    }else {
+                    } else {
                         queue.push_back(None);
                     }
                 }
@@ -144,7 +144,6 @@ impl TreeNode {
         }
         ret
     }
-
 }
 
 use std::collections::HashSet;
@@ -229,10 +228,10 @@ mod test {
 
     #[test]
     fn tree_to_vec() {
-        let v1 = vec![Some(1),None,Some(2)];
+        let v1 = vec![Some(1), None, Some(2)];
         let t1 = TreeNode::build(v1.clone());
         assert_eq!(v1, TreeNode::into_vec(t1));
-        let v2 = vec![Some(2),Some(1)];
+        let v2 = vec![Some(2), Some(1)];
         let t2 = TreeNode::build(v2.clone());
         assert_eq!(v2, TreeNode::into_vec(t2));
     }
