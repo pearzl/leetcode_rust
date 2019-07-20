@@ -111,6 +111,40 @@ impl TreeNode {
             }
         }
     }
+
+    pub fn into_vec(tree: Option<Rc<RefCell<TreeNode>>>) -> Vec<Option<i32>> {
+        let mut queue = VecDeque::new();
+        queue.push_back(tree);
+        let mut ret = vec![];
+        while let Some(node) = queue.pop_front() {
+            match node {
+                None => {
+                    ret.push(None);
+                },
+                Some(t) => {
+                    ret.push(Some(t.borrow().val));
+                    if let Some(ref lt) = t.borrow().left {
+                        queue.push_back(Some(Rc::clone(lt)));
+                    }else {
+                        queue.push_back(None);
+                    }
+                    if let Some(ref rt) = t.borrow().right {
+                        queue.push_back(Some(Rc::clone(rt)));
+                    }else {
+                        queue.push_back(None);
+                    }
+                }
+            }
+        }
+        while let Some(item) = ret.pop() {
+            if let Some(t) = item {
+                ret.push(Some(t));
+                break;
+            }
+        }
+        ret
+    }
+
 }
 
 use std::collections::HashSet;
@@ -191,5 +225,15 @@ mod test {
         t1.as_ref().unwrap().borrow_mut().val = 10;
         assert_eq!(TreeNode::build(vec![Some(2), Some(1)]), t2);
         assert_eq!(TreeNode::build(vec![Some(10)]), t1);
+    }
+
+    #[test]
+    fn tree_to_vec() {
+        let v1 = vec![Some(1),None,Some(2)];
+        let t1 = TreeNode::build(v1.clone());
+        assert_eq!(v1, TreeNode::into_vec(t1));
+        let v2 = vec![Some(2),Some(1)];
+        let t2 = TreeNode::build(v2.clone());
+        assert_eq!(v2, TreeNode::into_vec(t2));
     }
 }
