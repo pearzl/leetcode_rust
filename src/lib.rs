@@ -96,6 +96,7 @@ mod answer {
     mod q0092_reverse_linked_list_ii;
     mod q0093_restore_ip_addresses;
     mod q0094_binary_tree_inorder_traversal;
+    mod q0095_unique_binary_search_trees_ii;
 
     mod q0097_interleaving_string;
 }
