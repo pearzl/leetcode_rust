@@ -100,5 +100,7 @@ mod answer {
     mod q0096_unique_binary_search_trees;
     mod q0097_interleaving_string;
     mod q0098_validate_binary_search_tree;
+    mod q0099_recover_binary_search_tree;
+    mod q0100_same_tree;
 
 }
