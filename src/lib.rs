@@ -98,6 +98,7 @@ mod answer {
     mod q0094_binary_tree_inorder_traversal;
     mod q0095_unique_binary_search_trees_ii;
     mod q0096_unique_binary_search_trees;
-
     mod q0097_interleaving_string;
+    mod q0098_validate_binary_search_tree;
+
 }
