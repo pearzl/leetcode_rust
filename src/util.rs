@@ -98,6 +98,19 @@ impl TreeNode {
         }
         Some(head)
     }
+
+    pub fn clone_tree(t: &Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
+        match t {
+            None => return None,
+            Some(rf_node) => {
+                return Some(Rc::new(RefCell::new(TreeNode {
+                    val: rf_node.borrow().val,
+                    left: TreeNode::clone_tree(&rf_node.borrow().left),
+                    right: TreeNode::clone_tree(&rf_node.borrow().right),
+                })))
+            }
+        }
+    }
 }
 
 use std::collections::HashSet;
@@ -165,5 +178,18 @@ mod test {
                 })))
             })))
         );
+    }
+
+    #[test]
+    fn clone_tree() {
+        let t1 = Some(Rc::new(RefCell::new(TreeNode::new(1))));
+        let t2 = Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: TreeNode::clone_tree(&t1),
+            right: None,
+        })));
+        t1.as_ref().unwrap().borrow_mut().val = 10;
+        assert_eq!(TreeNode::build(vec![Some(2), Some(1)]), t2);
+        assert_eq!(TreeNode::build(vec![Some(10)]), t1);
     }
 }
