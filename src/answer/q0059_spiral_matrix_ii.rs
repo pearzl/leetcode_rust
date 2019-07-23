@@ -117,7 +117,7 @@ mod tests {
     fn it_works() {
         assert_eq!(Vec::<Vec<i32>>::new(), Solution::generate_matrix(0));
         assert_eq!(vec![vec![1]], Solution::generate_matrix(1));
-        assert_eq!(vec![vec![1, 2], vec![3, 4]], Solution::generate_matrix(2));
+        assert_eq!(vec![vec![1, 2], vec![4, 3]], Solution::generate_matrix(2));
         assert_eq!(
             vec![vec![1, 2, 3], vec![8, 9, 4], vec![7, 6, 5]],
             Solution::generate_matrix(3)

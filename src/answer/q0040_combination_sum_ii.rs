@@ -42,11 +42,13 @@ impl Solution {
 mod tests {
     use super::Solution;
 
+    use crate::util;
+
     #[test]
     fn it_works() {
         assert_eq!(
-            Solution::combination_sum2(vec![10, 1, 2, 7, 6, 1, 5], 8),
-            vec![vec![1, 7], vec![1, 2, 5], vec![2, 6], vec![1, 1, 6]]
+            util::vec_2_set(Solution::combination_sum2(vec![10, 1, 2, 7, 6, 1, 5], 8)),
+            util::vec_2_set(vec![vec![1, 7], vec![1, 2, 5], vec![2, 6], vec![1, 1, 6]])
         );
     }
 }

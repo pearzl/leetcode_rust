@@ -27,18 +27,20 @@ impl Solution {
 mod tests {
     use super::Solution;
 
+    use crate::util;
+
     #[test]
     fn it_works() {
         assert_eq!(
-            vec![
+            util::vec_2_set(vec![
                 vec![1, 2, 3],
                 vec![1, 3, 2],
                 vec![2, 1, 3],
                 vec![2, 3, 1],
                 vec![3, 1, 2],
                 vec![3, 2, 1]
-            ],
-            Solution::permute(vec![1, 1, 3])
+            ]),
+            util::vec_2_set(Solution::permute(vec![1, 2, 3]))
         );
     }
 }

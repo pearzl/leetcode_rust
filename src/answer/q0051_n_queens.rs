@@ -105,10 +105,11 @@ mod tests {
     #[test]
     fn it_works() {
         let ept: Vec<Vec<String>> = vec![vec![]];
+        let empty = Vec::<Vec<String>>::new();
         assert_eq!(Solution::solve_n_queens(0), ept);
         assert_eq!(Solution::solve_n_queens(1), vec![vec![String::from("Q")]]);
-        assert_eq!(Solution::solve_n_queens(2), ept);
-        assert_eq!(Solution::solve_n_queens(3), ept);
+        assert_eq!(Solution::solve_n_queens(2), empty);
+        assert_eq!(Solution::solve_n_queens(3), empty);
         // assert_eq!( Solution::solve_n_queens(8), vec![vec![String::new()]]);
     }
 
