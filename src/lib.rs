@@ -105,6 +105,8 @@ mod answer {
     mod q0101_symmetric_tree;
     mod q0102_binary_tree_level_order_traversal;
     mod q0103_binary_tree_zigzag_level_order_traversal;
+    mod q0104_maximum_depth_of_binary_tree;
+    mod q0105_construct_binary_tree_from_preorder_and_inorder_traversal;
 
     mod q0150_evaluate_reverse_polish_notation;
 }
