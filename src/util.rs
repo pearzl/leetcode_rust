@@ -1,5 +1,8 @@
 #![allow(dead_code)]
 
+use std::collections::HashSet;
+use std::convert::AsRef;
+
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -55,6 +58,27 @@ impl TreeNode {
             left: None,
             right: None,
         }
+    }
+
+    pub fn build_with_str<T: AsRef<str>>(s: T) -> Option<Rc<RefCell<TreeNode>>> {
+        let s = s.as_ref().trim();
+        if &s[0..=0] != "[" || &s[s.len() - 1..=&s.len() - 1] != "]" {
+            panic!(format!("{} can not build to TreeNode", &s));
+        }
+        let arr: Vec<&str> = s[1..=s.len() - 2].split(',').collect();
+        let v: Vec<Option<i32>> = arr
+            .into_iter()
+            .map(|ss| {
+                let ss = ss.trim();
+                if ss == "null" {
+                    return None;
+                } else {
+                    let n = ss.parse::<i32>().unwrap();
+                    return Some(n);
+                }
+            })
+            .collect();
+        TreeNode::build(v)
     }
 
     pub fn build(v: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
@@ -146,8 +170,6 @@ impl TreeNode {
     }
 }
 
-use std::collections::HashSet;
-
 pub fn vec_2_set<T: Clone + std::hash::Hash + Eq>(v: Vec<T>) -> HashSet<T> {
     v.iter().cloned().collect()
 }
@@ -210,6 +232,14 @@ mod test {
                     right: None
                 })))
             })))
+        );
+    }
+
+    #[test]
+    fn build_tree_node_from_str() {
+        assert_eq!(
+            TreeNode::build(vec![Some(1), None, Some(2), Some(3)]),
+            TreeNode::build_with_str("[1, null, 2, 3]")
         );
     }
 
