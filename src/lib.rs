@@ -111,6 +111,7 @@ mod answer {
     mod q0107_binary_tree_level_order_traversal_ii;
     mod q0108_convert_sorted_array_to_binary_search_tree;
     mod q0109_convert_sorted_list_to_binary_search_tree;
+    mod q0110_balanced_binary_tree;
 
     mod q0150_evaluate_reverse_polish_notation;
 }
