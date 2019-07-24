@@ -1,7 +1,7 @@
 mod util;
 
 #[allow(dead_code)]
-mod answer  { 
+mod answer {
     mod q0001_two_sum;
     mod q0002_add_two_numbers;
     mod q0003_longest_substring_without_repeating_characters;
@@ -115,7 +115,7 @@ mod answer  {
     mod q0111_minimum_depth_of_binary_tree;
     mod q0112_path_sum;
     mod q0113_path_sum_ii;
-    mod q0114_flatten_binary_tree_to_linked_list; 
+    mod q0114_flatten_binary_tree_to_linked_list;
 
     mod q0150_evaluate_reverse_polish_notation;
 }
