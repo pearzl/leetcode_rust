@@ -116,6 +116,7 @@ mod answer {
     mod q0112_path_sum;
     mod q0113_path_sum_ii;
     mod q0114_flatten_binary_tree_to_linked_list;
+    mod q0115_distinct_subsequences;
 
     mod q0150_evaluate_reverse_polish_notation;
 }
