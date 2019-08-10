@@ -1,7 +1,7 @@
 mod util;
 
 #[allow(dead_code)]
-mod answer {
+mod answer  { 
     mod q0001_two_sum;
     mod q0002_add_two_numbers;
     mod q0003_longest_substring_without_repeating_characters;

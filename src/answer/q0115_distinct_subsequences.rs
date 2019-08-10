@@ -21,10 +21,9 @@ impl Solution {
             return 0;
         }
         let t_byte = t.as_bytes();
-        let s_byte = s.as_bytes();
         let mut buf = vec![vec![0; t.len()]; s.len()]; // 在s的前i个位置组成t的前j个字符的组合的数目
         let mut count_first = 0;
-        let mut firtst_tchar = t_byte[0];
+        let firtst_tchar = t_byte[0];
         for (i, bs) in s.bytes().enumerate() {
             if firtst_tchar == bs {
                 count_first += 1;
