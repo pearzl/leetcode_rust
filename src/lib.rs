@@ -120,6 +120,7 @@ mod answer {
     mod q0118_pascals_triangle;
     mod q0119_pascals_triangle_ii;
     mod q0120_triangle;
+    mod q0121_best_time_to_buy_and_sell_stock;
 
     mod q0150_evaluate_reverse_polish_notation;
 }
