@@ -1,5 +1,4 @@
-// q0123_best_time_to_buy_and_sell_stock_iii 
-
+// q0123_best_time_to_buy_and_sell_stock_iii
 
 struct Solution;
 
@@ -9,13 +8,12 @@ impl Solution {
         for i in 0..prices.len() {
             let t1 = Solution::max_profit_1(&prices[0..=i]);
             let t2 = Solution::max_profit_1(&prices[i..]);
-            max = max.max(t1+t2);
+            max = max.max(t1 + t2);
             // println!("{}: {}-{}-{}", i, t1, t2, max);
         }
         max
     }
 
-    
     pub fn max_profit_1(prices: &[i32]) -> i32 {
         let len = prices.len();
         if len <= 1 {
@@ -37,11 +35,7 @@ impl Solution {
             return m;
         }
     }
-
-    
 }
-
-
 
 #[cfg(test)]
 mod tests {
@@ -49,9 +43,8 @@ mod tests {
 
     #[test]
     fn it_works() {
-        assert_eq!( 6, Solution::max_profit(vec![3,3,5,0,0,3,1,4]));
-        assert_eq!( 4, Solution::max_profit(vec![1,2,3,4,5]));
-        assert_eq!( 13, Solution::max_profit(vec![1,2,4,2,5,7,2,4,9,0]));
+        assert_eq!(6, Solution::max_profit(vec![3, 3, 5, 0, 0, 3, 1, 4]));
+        assert_eq!(4, Solution::max_profit(vec![1, 2, 3, 4, 5]));
+        assert_eq!(13, Solution::max_profit(vec![1, 2, 4, 2, 5, 7, 2, 4, 9, 0]));
     }
 }
-
