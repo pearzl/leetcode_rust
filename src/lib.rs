@@ -1,7 +1,7 @@
 mod util;
 
 #[allow(dead_code)]
-mod answer    { 
+mod answer {
     mod q0001_two_sum;
     mod q0002_add_two_numbers;
     mod q0003_longest_substring_without_repeating_characters;
@@ -121,8 +121,9 @@ mod answer    {
     mod q0119_pascals_triangle_ii;
     mod q0120_triangle;
     mod q0121_best_time_to_buy_and_sell_stock;
-    mod q0122_best_time_to_buy_and_sell_stock_ii; 
-    mod q0123_best_time_to_buy_and_sell_stock_iii; 
+    mod q0122_best_time_to_buy_and_sell_stock_ii;
+    mod q0123_best_time_to_buy_and_sell_stock_iii;
+    mod q0124_binary_tree_maximum_path_sum;
 
     mod q0150_evaluate_reverse_polish_notation;
 }
