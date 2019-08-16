@@ -48,7 +48,7 @@ fn main() {
     let mut mods: Vec<&str> = t[1].lines().filter(|s| s.trim() != "").collect();
     if mods.contains(&append_content.as_str()) {
         eprintln!("already exist!");
-        return
+        return;
     }
     mods.push(&append_content);
     mods.sort();
