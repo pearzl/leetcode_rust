@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 
+use std::collections::BTreeSet;
 use std::collections::HashSet;
 use std::convert::AsRef;
 
@@ -170,8 +171,8 @@ impl TreeNode {
     }
 }
 
-pub fn vec_2_set<T: Clone + std::hash::Hash + Eq>(v: Vec<T>) -> HashSet<T> {
-    v.iter().cloned().collect()
+pub fn vec_2_set<T: std::cmp::Ord>(v: Vec<T>) -> BTreeSet<T> {
+    v.into_iter().collect()
 }
 
 pub fn compare_nest2_vec<T: Ord + Clone + std::hash::Hash + Eq>(
