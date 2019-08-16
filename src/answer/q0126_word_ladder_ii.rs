@@ -194,42 +194,44 @@ impl Solution {
 mod tests {
     use super::Solution;
 
+    use crate::util;
+
     #[test]
     fn it_works() {
-        // assert_eq!(
-        //     vec![
-        //         vec![
-        //             String::from("hit"),
-        //             String::from("hot"),
-        //             String::from("dot"),
-        //             String::from("dog"),
-        //             String::from("cog")
-        //         ],
-        //         vec![
-        //             String::from("hit"),
-        //             String::from("hot"),
-        //             String::from("lot"),
-        //             String::from("log"),
-        //             String::from("cog")
-        //         ]
-        //     ],
-        //     Solution::find_ladders(
-        //         String::from("hit"),
-        //         String::from("cog"),
-        //         vec![
-        //             String::from("hot"),
-        //             String::from("dot"),
-        //             String::from("dog"),
-        //             String::from("lot"),
-        //             String::from("log"),
-        //             String::from("cog")
-        //         ]
-        //     )
-        // );
+        assert_eq!(
+            util::vec_2_set(vec![
+                vec![
+                    String::from("hit"),
+                    String::from("hot"),
+                    String::from("dot"),
+                    String::from("dog"),
+                    String::from("cog")
+                ],
+                vec![
+                    String::from("hit"),
+                    String::from("hot"),
+                    String::from("lot"),
+                    String::from("log"),
+                    String::from("cog")
+                ]
+            ]),
+            util::vec_2_set(Solution::find_ladders(
+                String::from("hit"),
+                String::from("cog"),
+                vec![
+                    String::from("hot"),
+                    String::from("dot"),
+                    String::from("dog"),
+                    String::from("lot"),
+                    String::from("log"),
+                    String::from("cog")
+                ]
+            ))
+        );
 
         assert_eq!(
-            Vec::<Vec<String>>::new(),
-            Solution::find_ladders(
+            util::vec_2_set(Vec::<Vec<String>>::new()),
+            util::vec_2_set(Solution::find_ladders(
                 String::from("hit"),
                 String::from("cog"),
                 vec![
@@ -239,16 +241,16 @@ mod tests {
                     String::from("lot"),
                     String::from("log")
                 ]
-            )
+            ))
         );
 
         assert_eq!(
-            Vec::<Vec<String>>::new(),
-            Solution::find_ladders(
+            util::vec_2_set(Vec::<Vec<String>>::new()),
+            util::vec_2_set(Solution::find_ladders(
                 String::from("hot"),
                 String::from("dog"),
                 vec![String::from("hot"), String::from("dog")]
-            )
+            ))
         );
     }
 
@@ -256,8 +258,101 @@ mod tests {
     // #[ignore]
     fn it_works1() {
         assert_eq!(
-            Vec::<Vec<String>>::new(),
-            Solution::find_ladders(
+            util::vec_2_set(vec![
+                vec![
+                    String::from("catch"),
+                    String::from("patch"),
+                    String::from("parch"),
+                    String::from("perch"),
+                    String::from("peach"),
+                    String::from("peace"),
+                    String::from("place"),
+                    String::from("plane"),
+                    String::from("plans"),
+                    String::from("clans"),
+                    String::from("claws"),
+                    String::from("craws"),
+                    String::from("crawl"),
+                    String::from("trawl"),
+                    String::from("trail"),
+                    String::from("frail"),
+                    String::from("flail"),
+                    String::from("flair"),
+                    String::from("clair"),
+                    String::from("chair"),
+                    String::from("choir")
+                ],
+                vec![
+                    String::from("catch"),
+                    String::from("patch"),
+                    String::from("parch"),
+                    String::from("perch"),
+                    String::from("peach"),
+                    String::from("peace"),
+                    String::from("place"),
+                    String::from("plate"),
+                    String::from("prate"),
+                    String::from("grate"),
+                    String::from("grace"),
+                    String::from("trace"),
+                    String::from("tract"),
+                    String::from("trait"),
+                    String::from("trail"),
+                    String::from("frail"),
+                    String::from("flail"),
+                    String::from("flair"),
+                    String::from("clair"),
+                    String::from("chair"),
+                    String::from("choir")
+                ],
+                vec![
+                    String::from("catch"),
+                    String::from("patch"),
+                    String::from("parch"),
+                    String::from("perch"),
+                    String::from("perth"),
+                    String::from("perts"),
+                    String::from("perms"),
+                    String::from("terms"),
+                    String::from("teams"),
+                    String::from("trams"),
+                    String::from("crams"),
+                    String::from("craws"),
+                    String::from("crawl"),
+                    String::from("trawl"),
+                    String::from("trail"),
+                    String::from("frail"),
+                    String::from("flail"),
+                    String::from("flair"),
+                    String::from("clair"),
+                    String::from("chair"),
+                    String::from("choir")
+                ],
+                vec![
+                    String::from("catch"),
+                    String::from("patch"),
+                    String::from("parch"),
+                    String::from("perch"),
+                    String::from("perth"),
+                    String::from("perts"),
+                    String::from("perms"),
+                    String::from("terms"),
+                    String::from("teams"),
+                    String::from("trams"),
+                    String::from("drams"),
+                    String::from("draws"),
+                    String::from("drawl"),
+                    String::from("trawl"),
+                    String::from("trail"),
+                    String::from("frail"),
+                    String::from("flail"),
+                    String::from("flair"),
+                    String::from("clair"),
+                    String::from("chair"),
+                    String::from("choir")
+                ]
+            ]),
+            util::vec_2_set(Solution::find_ladders(
                 String::from("catch"),
                 String::from("choir"),
                 vec![
@@ -2632,11 +2727,11 @@ mod tests {
                     String::from("elope"),
                     String::from("tills")
                 ]
-            )
+            ))
         );
 
         assert_eq!(
-            vec![
+            util::vec_2_set(vec![
                 vec![
                     String::from("qa"),
                     String::from("ca"),
@@ -2994,8 +3089,8 @@ mod tests {
                     String::from("st"),
                     String::from("sq")
                 ]
-            ],
-            Solution::find_ladders(
+            ]),
+            util::vec_2_set(Solution::find_ladders(
                 String::from("qa"),
                 String::from("sq"),
                 vec![
@@ -3095,7 +3190,7 @@ mod tests {
                     String::from("sq"),
                     String::from("ye")
                 ]
-            )
+            ))
         );
     }
 }
