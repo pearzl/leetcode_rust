@@ -33,19 +33,23 @@ fn main() {
     // let title = format!("q{:04}_{} ", num, title.trim_end_matches(|c: char| !(c.is_ascii_alphanumeric() || c == '_')));
     let title = format!("q{:04}_{}", num, title.trim());
 
-    fs::write(
-        format!("src/answer/{}.rs", title),
-        format!("// {} \n{}", title, TEMPLATE).as_bytes(),
-    )
-    .unwrap();
+    // fs::write(
+    //     format!("src/answer/{}.rs", title),
+    //     format!("// {} \n{}", title, TEMPLATE).as_bytes(),
+    // )
+    // .unwrap();
 
     let lib_file = "src/lib.rs";
-    let append_content = format!("    mod {}; \n", title);
+    let append_content = format!("    mod {}; ", title);
     let content = fs::read_to_string(lib_file).unwrap();
     let t: Vec<&str> = content.split(|c| c == '{' || c == '}').collect();
     let mut new_content = String::from(t[0]);
     new_content.push_str(" { \n");
     let mut mods: Vec<&str> = t[1].lines().filter(|s| s.trim() != "").collect();
+    if mods.contains(&append_content.as_str()) {
+        eprintln!("already exist!");
+        return
+    }
     mods.push(&append_content);
     mods.sort();
     for m in mods.iter() {
@@ -53,5 +57,12 @@ fn main() {
         new_content.push('\n');
     }
     new_content.push_str("}\n");
+
+    fs::write(
+        format!("src/answer/{}.rs", title),
+        format!("// {} \n{}", title, TEMPLATE).as_bytes(),
+    )
+    .unwrap();
+
     fs::write(lib_file, new_content).unwrap();
 }
