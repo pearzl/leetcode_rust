@@ -128,5 +128,6 @@ mod answer {
     mod q0126_word_ladder_ii;
     mod q0127_word_ladder;
     mod q0128_longest_consecutive_sequence;
+    mod q0129_sum_root_to_leaf_numbers;
     mod q0150_evaluate_reverse_polish_notation;
 }
