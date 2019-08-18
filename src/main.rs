@@ -22,9 +22,9 @@ mod tests {
 
 "###;
 
+use std::collections::HashSet;
 use std::env;
 use std::fs;
-use std::collections::HashSet;
 
 fn main() {
     let mut args = env::args();
@@ -47,7 +47,10 @@ fn main() {
     let mut new_content = String::from(t[0]);
     new_content.push_str(" { \n");
     let mut mods: Vec<&str> = t[1].lines().filter(|s| s.trim() != "").collect();
-    let index_check: HashSet<usize> = mods.iter().map(|s| s[9..13].parse::<usize>().unwrap()).collect();
+    let index_check: HashSet<usize> = mods
+        .iter()
+        .map(|s| s[9..13].parse::<usize>().unwrap())
+        .collect();
 
     if index_check.contains(&num) {
         eprintln!("already exist!");
