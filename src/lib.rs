@@ -1,7 +1,7 @@
 mod util;
 
 #[allow(dead_code)]
-mod answer {
+mod answer    { 
     mod q0001_two_sum;
     mod q0002_add_two_numbers;
     mod q0003_longest_substring_without_repeating_characters;
@@ -129,5 +129,7 @@ mod answer {
     mod q0127_word_ladder;
     mod q0128_longest_consecutive_sequence;
     mod q0129_sum_root_to_leaf_numbers;
+    mod q0130_surrounded_regions; 
+
     mod q0150_evaluate_reverse_polish_notation;
 }
