@@ -132,6 +132,7 @@ mod answer {
     mod q0130_surrounded_regions;
     mod q0131_palindrome_partitioning;
     mod q0132_palindrome_partitioning_ii;
+    mod q0134_gas_station;
 
     mod q0150_evaluate_reverse_polish_notation;
 }
