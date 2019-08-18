@@ -1,7 +1,7 @@
 mod util;
 
 #[allow(dead_code)]
-mod answer {
+mod answer  { 
     mod q0001_two_sum;
     mod q0002_add_two_numbers;
     mod q0003_longest_substring_without_repeating_characters;
@@ -133,6 +133,7 @@ mod answer {
     mod q0131_palindrome_partitioning;
     mod q0132_palindrome_partitioning_ii;
     mod q0134_gas_station;
+    mod q0135_candy; 
 
     mod q0150_evaluate_reverse_polish_notation;
 }
