@@ -2,6 +2,7 @@
 
 struct Solution;
 
+// WAY1： out of time limit
 // use std::collections::HashSet;
 // impl Solution {
 //     pub fn word_break(s: String, word_dict: Vec<String>) -> Vec<String> {
@@ -51,6 +52,7 @@ struct Solution;
 //     }
 // }
 
+// WAY2: out of memory limit
 // use std::collections::HashSet;
 // use std::collections::HashMap;
 // impl Solution {
