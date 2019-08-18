@@ -24,6 +24,7 @@ mod tests {
 
 use std::env;
 use std::fs;
+use std::collections::HashSet;
 
 fn main() {
     let mut args = env::args();
@@ -40,13 +41,15 @@ fn main() {
     // .unwrap();
 
     let lib_file = "src/lib.rs";
-    let append_content = format!("    mod {}; ", title);
+    let append_content = format!("    mod {}; \n", title);
     let content = fs::read_to_string(lib_file).unwrap();
     let t: Vec<&str> = content.split(|c| c == '{' || c == '}').collect();
     let mut new_content = String::from(t[0]);
     new_content.push_str(" { \n");
     let mut mods: Vec<&str> = t[1].lines().filter(|s| s.trim() != "").collect();
-    if mods.contains(&append_content.as_str()) {
+    let index_check: HashSet<usize> = mods.iter().map(|s| s[9..13].parse::<usize>().unwrap()).collect();
+
+    if index_check.contains(&num) {
         eprintln!("already exist!");
         return;
     }
