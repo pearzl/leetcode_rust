@@ -175,6 +175,10 @@ pub fn vec_2_set<T: std::cmp::Ord>(v: Vec<T>) -> BTreeSet<T> {
     v.into_iter().collect()
 }
 
+pub fn build_string_array(v: Vec<&str>) -> Vec<String> {
+    v.into_iter().map(|s| s.to_string()).collect()
+}
+
 pub fn compare_nest2_vec<T: Ord + Clone + std::hash::Hash + Eq>(
     a: Vec<Vec<T>>,
     b: Vec<Vec<T>>,
