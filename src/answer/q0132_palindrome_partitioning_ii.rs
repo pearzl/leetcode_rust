@@ -13,7 +13,7 @@ impl Solution {
         let mut start_indexs = HashSet::new();
         start_indexs.insert(0);
         while !start_indexs.contains(&ss.len()) {
-            println!("{:?}", start_indexs);
+            // println!("{:?}", start_indexs);
             let mut new_start_indexs = HashSet::new();
             for &start_i in start_indexs.iter() {
                 for i in start_i..ss.len() {
