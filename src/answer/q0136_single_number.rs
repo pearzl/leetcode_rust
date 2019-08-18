@@ -1,5 +1,4 @@
-// q0136_single_number 
-
+// q0136_single_number
 
 struct Solution;
 
@@ -28,16 +27,13 @@ impl Solution {
     }
 }
 
-
-
 #[cfg(test)]
 mod tests {
     use super::Solution;
 
     #[test]
     fn it_works() {
-        assert_eq!( 1, Solution::single_number(vec![2,2,1]));
-        assert_eq!( 4, Solution::single_number(vec![4,1,2,1,2]));
+        assert_eq!(1, Solution::single_number(vec![2, 2, 1]));
+        assert_eq!(4, Solution::single_number(vec![4, 1, 2, 1, 2]));
     }
 }
-
