@@ -33,10 +33,10 @@ impl Solution {
         let mut checked = HashSet::new();
         let mut need_check = vec![];
 
-        for (r,c) in board[0].iter().enumerate() {
-            if *c == 'O' {
-                let v = neighber((0,r));
-                checked.insert((0,r));
+        macro_rules! handlep {
+            (($l: expr, $r: expr)) => {
+                let v = neighber(($l,$r));
+                checked.insert(($l,$r));
                 for p in v.into_iter() {
                     if board[p.0][p.1] == 'O' {
                         no_overturn.insert(p);
@@ -45,51 +45,30 @@ impl Solution {
                         }
                     }
                 }
+            };
+        }
+
+        for (r,c) in board[0].iter().enumerate() {
+            if *c == 'O' {
+                handlep!((0,r));
             }
         }
         for (r,c) in board[line-1].iter().enumerate() {
             if *c == 'O' {
-                let v = neighber((line-1,r));
-                checked.insert((line-1,r));
-                for p in v.into_iter() {
-                    if board[p.0][p.1] == 'O' {
-                        no_overturn.insert(p);
-                        if !checked.contains(&p) {
-                            need_check.push(p);
-                        }
-                    }
-                }
+                handlep!((line-1,r));
             }
         }
         for l in 1..line-1 {
             if board[l][0] != 'O' {
                 continue;
             }
-            let v = neighber((l,0));
-            checked.insert((l,0));
-            for p in v.into_iter() {
-                if board[p.0][p.1] == 'O' {
-                    no_overturn.insert(p);
-                    if !checked.contains(&p) {
-                        need_check.push(p);
-                    }
-                }
-            }
+            handlep!((l,0));
         }
         for l in 1..line-1 {
             if board[l][row-1] != 'O' {
                 continue;
             }
-            let v = neighber((l,row-1));
-            checked.insert((l,row-1));
-            for p in v.into_iter() {
-                if board[p.0][p.1] == 'O' {
-                    no_overturn.insert(p);
-                    if !checked.contains(&p) {
-                        need_check.push(p);
-                    }
-                }
-            }
+            handlep!((l,row-1));
         }
 
         while !need_check.is_empty() {
@@ -97,18 +76,9 @@ impl Solution {
             std::mem::swap(&mut nc, &mut need_check);
             for pp in nc.into_iter() {
                 if checked.contains(&pp) {
-                    continue
+                    continue;
                 }
-                let v = neighber((pp.0,pp.1));
-                checked.insert((pp.0,pp.1));
-                for p in v.into_iter() {
-                    if board[p.0][p.1] == 'O' {
-                        no_overturn.insert(p);
-                        if !checked.contains(&p) {
-                            need_check.push(p);
-                        }
-                    }
-                }
+                handlep!((pp.0, pp.1));
             }
         }
 
