@@ -136,6 +136,7 @@ mod answer {
     mod q0135_candy;
     mod q0136_single_number;
     mod q0137_single_number_ii;
+    mod q0139_word_break;
 
     mod q0150_evaluate_reverse_polish_notation;
 }
