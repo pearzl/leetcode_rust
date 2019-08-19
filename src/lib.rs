@@ -139,6 +139,7 @@ mod answer {
     mod q0139_word_break;
     mod q0140_word_break_ii;
     mod q0144_binary_tree_preorder_traversal;
+    mod q0145_binary_tree_postorder_traversal;
 
     mod q0150_evaluate_reverse_polish_notation;
 }
