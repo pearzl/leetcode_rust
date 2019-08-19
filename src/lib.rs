@@ -141,6 +141,7 @@ mod answer {
     mod q0144_binary_tree_preorder_traversal;
     mod q0145_binary_tree_postorder_traversal;
     mod q0146_lru_cache;
+    mod q0149_max_points_on_a_line;
 
     mod q0150_evaluate_reverse_polish_notation;
 }
