@@ -147,5 +147,6 @@ mod answer {
     mod q0152_maximum_product_subarray;
     mod q0153_find_minimum_in_rotated_sorted_array;
     mod q0154_find_minimum_in_rotated_sorted_array_ii;
+    mod q0155_min_stack;
 
 }
