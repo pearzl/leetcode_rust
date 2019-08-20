@@ -144,6 +144,7 @@ mod answer {
     mod q0149_max_points_on_a_line;
     mod q0150_evaluate_reverse_polish_notation;
     mod q0151_reverse_words_in_a_string;
-
     mod q0152_maximum_product_subarray;
+    mod q0153_find_minimum_in_rotated_sorted_array;
+
 }
