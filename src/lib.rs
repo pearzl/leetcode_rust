@@ -151,5 +151,6 @@ mod answer {
     mod q0162_find_peak_element;
     mod q0164_maximum_gap;
     mod q0165_compare_version_numbers;
+    mod q0166_fraction_to_recurring_decimal;
 
 }
