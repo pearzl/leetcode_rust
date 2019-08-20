@@ -150,5 +150,6 @@ mod answer {
     mod q0155_min_stack;
     mod q0162_find_peak_element;
     mod q0164_maximum_gap;
+    mod q0165_compare_version_numbers;
 
 }
