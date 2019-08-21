@@ -9,14 +9,14 @@ impl Solution {
     ];
 
     pub fn convert_to_title(n: i32) -> String {
-        let BASE = &Solution::BASE;
+        let base = &Solution::BASE;
         let mut n = n as usize;
         let mut ret = vec![];
         while n > 26 {
-            ret.push(BASE[(n - 1) % 26]);
+            ret.push(base[(n - 1) % 26]);
             n = (n - 1) / 26;
         }
-        let mut s = format!("{}", BASE[n - 1]);
+        let mut s = format!("{}", base[n - 1]);
         while let Some(b) = ret.pop() {
             s.push(b);
         }
