@@ -1,7 +1,7 @@
 mod util;
 
 #[allow(dead_code)]
-mod answer  { 
+mod answer {
     mod q0001_two_sum;
     mod q0002_add_two_numbers;
     mod q0003_longest_substring_without_repeating_characters;
@@ -156,6 +156,7 @@ mod answer  {
     mod q0168_excel_sheet_column_title;
     mod q0169_majority_element;
     mod q0171_excel_sheet_column_number;
-    mod q0172_factorial_trailing_zeroes; 
+    mod q0172_factorial_trailing_zeroes;
+    mod q0173_binary_search_tree_iterator;
 
 }
