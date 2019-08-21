@@ -154,5 +154,6 @@ mod answer {
     mod q0166_fraction_to_recurring_decimal;
     mod q0167_two_sum_ii_input_array_is_sorted;
     mod q0168_excel_sheet_column_title;
+    mod q0169_majority_element;
 
 }
