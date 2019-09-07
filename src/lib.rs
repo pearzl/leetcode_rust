@@ -165,5 +165,6 @@ mod answer {
     mod q0189_rotate_array;
     mod q0198_house_robber;
     mod q0199_binary_tree_right_side_view;
+    mod q0200_number_of_islands;
 
 }
