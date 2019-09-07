@@ -167,5 +167,6 @@ mod answer {
     mod q0199_binary_tree_right_side_view;
     mod q0200_number_of_islands;
     mod q0201_bitwise_and_of_numbers_range;
+    mod q0202_happy_number;
 
 }
