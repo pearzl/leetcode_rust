@@ -169,6 +169,7 @@ mod answer {
     mod q0201_bitwise_and_of_numbers_range;
     mod q0202_happy_number;
     mod q0204_count_primes;
+    mod q0205_isomorphic_strings;
     mod q0210_course_schedule_ii;
 
 }
