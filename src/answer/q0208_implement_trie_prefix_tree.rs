@@ -2,10 +2,11 @@
 
 use std::cell::RefCell;
 use std::rc::Rc;
+use std::boxed::Box;
 
 #[derive(Clone, Debug)]
 struct Trie {
-    t: [Option<(Rc<RefCell<Trie>>, bool)>;26]
+    t: [Option<(Rc<RefCell<Box<Trie>>>, bool)>;26]
 }
 
 /** 
@@ -19,7 +20,7 @@ impl Trie {
         use std::mem::MaybeUninit;
 
         let t = unsafe {
-            let mut tmp: [MaybeUninit<Option<(Rc<RefCell<Trie>>, bool)>>; 26] = MaybeUninit::uninit().assume_init();
+            let mut tmp: [MaybeUninit<Option<(Rc<RefCell<Box<Trie>>>, bool)>>; 26] = MaybeUninit::uninit().assume_init();
             for m in tmp.iter_mut() {
                 std::ptr::write(m.as_mut_ptr(), None);
             }
@@ -31,8 +32,10 @@ impl Trie {
     /** Inserts a word into the trie. */
     fn insert(&mut self, word: String) {
         use std::ops::DerefMut;
-        let mut tree = Rc::new(RefCell::new(self.clone()));
-        let root_tree = Rc::clone(&tree);
+        // let mut tree = Rc::new(RefCell::new(self.clone()));
+        let b = unsafe {Box::from_raw(self as *mut Trie)};
+        let mut tree = Rc::new(RefCell::new(b));
+        let mut root_tree = Rc::clone(&tree);
         let last_i = word.len() - 1;
         for (l, i)in word.chars().map(|c| (c as u8 - b'a') as usize).enumerate() {
             let tmp_tree = Rc::clone(&tree);
@@ -40,7 +43,7 @@ impl Trie {
             if let Some(rrct_pair) = trie_i {
                 tree = Rc::clone(&rrct_pair.0);
             }else {
-                let t = Rc::new(RefCell::new(Trie::new()));
+                let t = Rc::new(RefCell::new(Box::new(Trie::new())));
                 if last_i == l {
                     *trie_i = Some((Rc::clone(&t), true));
                 }else{
@@ -49,8 +52,10 @@ impl Trie {
                 tree = t;
             }}
         }
-        let mut tmp = root_tree.borrow_mut();
-        std::mem::swap(self, tmp.deref_mut())
+        // let mut tmp = root_tree.borrow_mut();
+        // std::mem::swap(self, tmp.deref_mut())
+        let mut rt = Rc::try_unwrap(root_tree).unwrap().into_inner();
+        unsafe{std::ptr::swap(self as *mut Trie, Box::into_raw(rt))}
     }
     
     /** Returns if the word is in the trie. */
