@@ -170,6 +170,8 @@ mod answer {
     mod q0202_happy_number;
     mod q0204_count_primes;
     mod q0205_isomorphic_strings;
+    mod q0207_course_schedule;
+    mod q0208_implement_trie_prefix_tree;
     mod q0210_course_schedule_ii;
 
 }
