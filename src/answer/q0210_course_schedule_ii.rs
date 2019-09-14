@@ -83,7 +83,9 @@ impl Solution {
 
         let mut post_conditions = HashMap::with_capacity(num_courses);
         for postcondition in prerequisites.iter() {
-            let set = post_conditions.entry(postcondition[1]).or_insert_with(||HashSet::new());
+            let set = post_conditions
+                .entry(postcondition[1])
+                .or_insert_with(|| HashSet::new());
             set.insert(postcondition[0]);
         }
 
@@ -119,7 +121,7 @@ impl Solution {
         }
         if ret.len() == num_courses {
             return ret;
-        }else {
+        } else {
             return vec![];
         }
     }
@@ -140,7 +142,7 @@ mod tests {
                 vec![vec![1, 0], vec![2, 0], vec![3, 1], vec![3, 2]]
             ))
         );
-        
+
         // assert!(vec![vec![0, 1], vec![1, 0]].contains(&Solution::find_order(
         //     100,
         //     vec![
