@@ -175,5 +175,6 @@ mod answer {
     mod q0209_minimum_size_subarray_sum;
     mod q0210_course_schedule_ii;
     mod q0211_add_and_search_word_data_structure_design;
+    mod q0212_word_search_ii;
 
 }
