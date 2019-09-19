@@ -1,7 +1,7 @@
 mod util;
 
 #[allow(dead_code)]
-mod answer   { 
+mod answer {
     mod q0001_two_sum;
     mod q0002_add_two_numbers;
     mod q0003_longest_substring_without_repeating_characters;
@@ -176,7 +176,8 @@ mod answer   {
     mod q0210_course_schedule_ii;
     mod q0211_add_and_search_word_data_structure_design;
     mod q0212_word_search_ii;
-    mod q0213_house_robber_ii; 
-    mod q0214_shortest_palindrome; 
+    mod q0213_house_robber_ii;
+    mod q0214_shortest_palindrome;
+    mod q0215_kth_largest_element_in_an_array;
 
 }
