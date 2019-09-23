@@ -180,5 +180,6 @@ mod answer {
     mod q0214_shortest_palindrome;
     mod q0215_kth_largest_element_in_an_array;
     mod q0216_combination_sum_iii;
+    mod q0217_contains_duplicate;
 
 }
